@@ -1,0 +1,24 @@
+name: PluginTools
+version: 1.0
+author: sdfzgufjkfdsgtzr
+main: de.sdfzgufjkfdsgtzr.plugin.Main
+api-version: 1.13
+commands:
+  home:
+    description: teleports the player to his home
+    usage: /home to teleport or /home set to set a new home
+  service:
+    description: provides access to the server's status
+    usage: /service [on/off]
+  color:
+    description: changes the player's name color & message color in chat
+    usage: /color [name] <message>
+  balance:
+    description: shows the current amount of money
+    usage: /balance <player>
+  pay:
+    description: pay money to another player
+    usage: /pay <player> <amount>
+  slimecheck:
+    description: provides information wheter the player enters a slime chunk or not
+    usage: /slimecheck
