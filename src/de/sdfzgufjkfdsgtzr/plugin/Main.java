@@ -11,9 +11,12 @@ import de.sdfzgufjkfdsgtzr.plugin.SQL.MySQLCon;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 
 
@@ -25,6 +28,8 @@ public class Main extends JavaPlugin {
     public MySQLCon con;
     public boolean conActive = true;
     public final String PLUGIN_NAME = "[PluginTools]";
+    private File file = new File(this.getDataFolder() + "/language.yml");
+    private FileConfiguration languageFile = YamlConfiguration.loadConfiguration(file);
 
     @Override
     public void onEnable(){
@@ -32,6 +37,7 @@ public class Main extends JavaPlugin {
         cfg = getConfig();
         loadConfig();
         establishConnection();
+
 
         pm = getServer().getPluginManager();
         pm.registerEvents(new JoinLeave(this), this);
@@ -84,5 +90,23 @@ public class Main extends JavaPlugin {
     private void loadConfig(){
         cfg.options().copyDefaults(true);
         saveConfig();
+        getLanguageFile().options().copyDefaults(true);
+        saveConfig(languageFile, file);
+    }
+
+    public FileConfiguration getLanguageFile() {
+        return languageFile;
+    }
+
+    private void saveConfig(FileConfiguration languageFile, File file) {
+        try {
+            languageFile.save(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String format(String format){
+        return org.bukkit.ChatColor.translateAlternateColorCodes('&', format);
     }
 }
