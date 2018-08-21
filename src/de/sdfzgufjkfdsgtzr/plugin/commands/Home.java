@@ -36,7 +36,7 @@ public class Home implements CommandExecutor {
                         if (coords != null) {
                             Location home = new Location(p.getWorld(), coords[0], coords[1], coords[2]);
                             p.teleport(home);
-                            p.sendMessage(ChatColor.GRAY + cfg.getString(plugin.cfg.getString("startup.language") + ".Home.teleport-message"));
+                            p.sendMessage(ChatColor.GRAY + cfg.getString(plugin.lang + ".Home.teleport-message"));
                             return true;
                         }
                     } else if (args.length == 1) {
@@ -49,11 +49,11 @@ public class Home implements CommandExecutor {
                             return true;
                         }
                     } else {
-                        sender.sendMessage(ChatColor.DARK_RED + cfg.getString(plugin.cfg.getString("startup.language") + ".Home.teleport-usage"));
+                        sender.sendMessage(ChatColor.DARK_RED + cfg.getString(plugin.lang + ".Home.teleport-usage"));
                         return true;
                     }
                 } else{
-                    sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " Dir fehlt die notwendige Berechtigung!");
+                    sender.sendMessage(ChatColor.DARK_RED + cfg.getString(plugin.lang + ".permission-missing"));
                     return true;
                 }
             }else {

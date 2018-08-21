@@ -36,7 +36,7 @@ public class ChunkNotifier implements CommandExecutor {
                 }
                 return true;
             }else{
-                p.sendMessage(plugin.format(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.cfg.getString("startup.language") +".permission-missing")));
+                p.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang +".permission-missing"));
                 return true;
             }
         }else{

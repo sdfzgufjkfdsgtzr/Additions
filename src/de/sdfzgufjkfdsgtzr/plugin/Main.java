@@ -30,7 +30,7 @@ public class Main extends JavaPlugin {
     public final String PLUGIN_NAME = "[PluginTools]";
     private File file = new File(this.getDataFolder() + "/language.yml");
     private FileConfiguration languageFile = YamlConfiguration.loadConfiguration(file);
-    private String lang;
+    public String lang;
 
     @Override
     public void onEnable(){
