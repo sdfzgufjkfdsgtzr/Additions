@@ -29,7 +29,7 @@ public class Maintenance implements CommandExecutor
                         plugin.cfg.set("startup.maintenance", true);
                         for (Player p: Bukkit.getOnlinePlayers()) {
                             if(p.hasPermission("spl.util.service")) {
-                                p.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + sender.getName() + " " + cfg.get(plugin.lang + ".service.activated"));
+                                p.sendMessage(ChatColor.DARK_GREEN + plugin.PLUGIN_NAME + " " + sender.getName() + " " + cfg.getString(plugin.lang + ".service.activated"));
                             }
                         }
                         plugin.maintenance = true;
@@ -38,11 +38,11 @@ public class Maintenance implements CommandExecutor
                         plugin.getConfig().set("startup.maintenance", false);
                         for (Player p: Bukkit.getOnlinePlayers()) {
                             if (p.hasPermission("spl.util.service")) {
-                                p.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + sender.getName() + " " + cfg.get(plugin.lang + ".service.deactivated"));
+                                p.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + sender.getName() + " " + cfg.getString(plugin.lang + ".service.deactivated"));
                             }
                         }
                         plugin.cfg.set("startup.maintenance", false);
-                        plugin.maintenance = true;
+                        plugin.maintenance = false;
                         plugin.saveConfig();
                     }
                     return true;

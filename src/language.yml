@@ -1,5 +1,14 @@
 de:
+  permission-missing: Du hast keine Berechtigung das zu tun
   ChunkNotifier:
-    Notify: 'Du erhälst ab sofort Benachrichtigungen über Slime Chunks'
-    No-Notify: 'Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr'
-  permission-missing: 'Du hast keine Berechtigung das zu tun'
+    Notify: Du erhälst ab sofort Benachrichtigungen über Slime Chunks
+    No-Notify: Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr
+  Home:
+    teleport-message: Du bist nun Zuhause
+    teleport-usage: Bitte /home <set> nutzen
+  ChatColor:
+    default: Deine Chat-Farben wurden auf den Standard zurückgesetzt
+    prefixColor: Die neue Farbe deines Namens ist
+    chatColor: Die neue Farbe deiner Nachricht ist
+    misusage: Du darfst nur %s oder %s nutzen!
+    newColor: Die neue Farbe deines Namens ist

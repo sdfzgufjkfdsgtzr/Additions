@@ -117,9 +117,9 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.ChunkNotifier.No-Notify", "Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr");
         this.getLanguageFile().addDefault("de.Home.teleport-message", "Du bist nun Zuhause");
         this.getLanguageFile().addDefault("de.Home.teleport-usage", "Bitte /home <set> nutzen");
-        this.getLanguageFile().addDefault("de.Service.deactivated", "hat den Wartungsmodus beendet");
-        this.getLanguageFile().addDefault("de.Service.activated", "hat den Wartungsmodus aktiviert");
-        this.getLanguageFile().addDefault("de.Service.value", "Der Wartungsmodus steht auf");
+        this.getLanguageFile().addDefault("de.service.deactivated", "hat den Wartungsmodus beendet");
+        this.getLanguageFile().addDefault("de.service.activated", "hat den Wartungsmodus aktiviert");
+        this.getLanguageFile().addDefault("de.service.value", "Der Wartungsmodus steht auf");
         this.getLanguageFile().addDefault("de.ChatColor.default", "Deine Chat-Farben wurden auf den Standard zurückgesetzt");
         this.getLanguageFile().addDefault("de.ChatColor.prefixColor", "Die neue Farbe deines Namens ist");
         this.getLanguageFile().addDefault("de.ChatColor.chatColor", "Die neue Farbe deiner Nachricht ist");
