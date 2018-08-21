@@ -7,6 +7,7 @@ database:
   table: fill_out
 startup:
   maintenance: false;
+  language: 'de'
   motd: '&aGeneric MOTD Message'
   chat_color: '7'
   prefix_color: 'f'

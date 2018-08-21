@@ -30,6 +30,7 @@ public class Main extends JavaPlugin {
     public final String PLUGIN_NAME = "[PluginTools]";
     private File file = new File(this.getDataFolder() + "/language.yml");
     private FileConfiguration languageFile = YamlConfiguration.loadConfiguration(file);
+    private String lang;
 
     @Override
     public void onEnable(){
@@ -38,6 +39,7 @@ public class Main extends JavaPlugin {
         addLanguageDefaults();
         loadConfig();
         establishConnection();
+        this.lang = cfg.getString("startup.language");
 
 
         pm = getServer().getPluginManager();
@@ -110,9 +112,12 @@ public class Main extends JavaPlugin {
     }
 
     private void addLanguageDefaults(){
-        this.getLanguageFile().addDefault("german.permission-missing", "Du hast keine Berechtigung das zu tun");
-        this.getLanguageFile().addDefault("german.ChunkNotifier.Notify", "Du erhälst ab sofort Benachrichtigungen über Slime Chunks");
-        this.getLanguageFile().addDefault("german.ChunkNotifier.No-Notify", "Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr");
+        this.getLanguageFile().addDefault("de.permission-missing", "Du hast keine Berechtigung das zu tun");
+        this.getLanguageFile().addDefault("de.ChunkNotifier.Notify", "Du erhälst ab sofort Benachrichtigungen über Slime Chunks");
+        this.getLanguageFile().addDefault("de.ChunkNotifier.No-Notify", "Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr");
+        this.getLanguageFile().addDefault("de.Home.teleport-message", "Du bist nun Zuhause");
+        this.getLanguageFile().addDefault("de.Home.teleport-usage", "Bitte /home <set> nutzen");
         this.saveLanguageFile(this.languageFile, this.file);
+        this.cfg.addDefault("startup.language", "de");
     }
 }

@@ -27,16 +27,16 @@ public class ChunkNotifier implements CommandExecutor {
             if(p.hasPermission("spl.util.chunkNotifier")){
                 if(plugin.cfg.getBoolean("user." + p.getUniqueId().toString() + ".notify")){
                     plugin.cfg.set("user." + p.getUniqueId().toString() + ".notify", false);
-                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString("german.ChunkNotifier.No-Notify"));
+                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.cfg.getString("startup.language") + ".ChunkNotifier.No-Notify"));
                     plugin.saveConfig();
                 }else{
                     plugin.cfg.set("user." + p.getUniqueId().toString() + ".notify", true);
-                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString("german.ChunkNotifier.Notify"));
+                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.cfg.getString("startup.language") + ".ChunkNotifier.Notify"));
                     plugin.saveConfig();
                 }
                 return true;
             }else{
-                p.sendMessage(plugin.format(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString("german.permission-missing")));
+                p.sendMessage(plugin.format(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.cfg.getString("startup.language") +".permission-missing")));
                 return true;
             }
         }else{
