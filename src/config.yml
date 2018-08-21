@@ -1,13 +1,13 @@
 database:
-  host: localhost
-  port: 3306
-  database: minecraft
-  user: root
+  host: fill_out
+  port: 0000
+  database: fill_out
+  user: fill_out
   password:
-  table: player_data
+  table: fill_out
 startup:
   maintenance: false;
-  motd: '&aHello my Buddas'
+  motd: '&aGeneric MOTD Message'
   chat_color: '7'
   prefix_color: 'f'
 economy:
