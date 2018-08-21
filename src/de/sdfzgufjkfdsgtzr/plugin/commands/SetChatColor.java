@@ -35,10 +35,13 @@ public class SetChatColor implements CommandExecutor {
                 else if(args.length == 1){
                     if(args[0].matches(allowed)){
                         plugin.cfg.set("user." + p.getUniqueId().toString() + ".prefix_color", args[0].charAt(0));
-                        p.sendMessage(ChatColor.GRAY + "Die neue Farbe deines Namens ist: §o" + args[0].charAt(0));
+                        p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.prefixColor") + ": §o" + args[0].charAt(0));
                     }
                     else{
-                        p.sendMessage(ChatColor.DARK_RED + "Du darfst nur §7a-f, k-o oder 0-9 §4nutzen!");
+                        String part1 = "§7a-f, k-o§4";
+                        String part2 = "§70-9§4";
+                        String message = String.format(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.misusage"), part1, part2);
+                        p.sendMessage(message);
                     }
                     plugin.saveConfig();
                     return true;
@@ -46,23 +49,26 @@ public class SetChatColor implements CommandExecutor {
                 else if(args.length == 2) {
                     if (args[0].matches(allowed)) {
                         plugin.cfg.set("user." + p.getUniqueId().toString() + ".prefix_color", args[0].charAt(0));
-                        p.sendMessage(ChatColor.GRAY + "Die neue Farbe deines Namens ist: §o" + args[0].charAt(0));
+                        p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.prefixColor") + ": §o" + args[0].charAt(0));
                     }
                     if (args[1].matches(allowed)) {
                         plugin.cfg.set("user." + p.getUniqueId().toString() + ".chat_color", args[1].charAt(0));
-                        p.sendMessage(ChatColor.GRAY + "Die neue Farbe deiner Nachricht ist: §o" + args[1].charAt(0));
+                        p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.chatColor") + ": §o" + args[1].charAt(0));
                     } else {
-                        p.sendMessage(ChatColor.DARK_RED + "Du darfst nur §7a-f, k-o oder 0-9 §4 nutzen!");
+                        String part1 = "§7a-f, k-o§4";
+                        String part2 = "§70-9§4";
+                        String message = String.format(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.misusage"), part1, part2);
+                        p.sendMessage(message);
                     }
                     plugin.saveConfig();
                     return true;
                 }
             }else{
-                sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " Dir fehlt die notwendige Berechtigung!");
+                sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".permission-missing"));
                 return true;
             }
         }else{
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " We don't do this here!");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " The Console can't edit it's chat appearence");
             return true;
         }
         return false;

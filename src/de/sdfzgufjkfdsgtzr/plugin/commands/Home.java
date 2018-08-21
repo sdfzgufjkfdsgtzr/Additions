@@ -53,7 +53,7 @@ public class Home implements CommandExecutor {
                         return true;
                     }
                 } else{
-                    sender.sendMessage(ChatColor.DARK_RED + cfg.getString(plugin.lang + ".permission-missing"));
+                    sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".permission-missing"));
                     return true;
                 }
             }else {

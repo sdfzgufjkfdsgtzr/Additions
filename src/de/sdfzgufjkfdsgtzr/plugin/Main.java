@@ -121,6 +121,9 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.Service.activated", "hat den Wartungsmodus aktiviert");
         this.getLanguageFile().addDefault("de.Service.value", "Der Wartungsmodus steht auf");
         this.getLanguageFile().addDefault("de.ChatColor.default", "Deine Chat-Farben wurden auf den Standard zurückgesetzt");
+        this.getLanguageFile().addDefault("de.ChatColor.prefixColor", "Die neue Farbe deines Namens ist");
+        this.getLanguageFile().addDefault("de.ChatColor.chatColor", "Die neue Farbe deiner Nachricht ist");
+        this.getLanguageFile().addDefault("de.ChatColor.misusage", "Du darfst nur %s oder %s nutzen!");
         this.cfg.addDefault("startup.language", "de");
     }
 }
