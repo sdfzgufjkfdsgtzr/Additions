@@ -20,5 +20,5 @@ commands:
     description: pay money to another player
     usage: /pay <player> <amount>
   slimecheck:
-    description: provides information wheter the player enters a slime chunk or not
+    description: provides information wether the player enters a slime chunk or not
     usage: /slimecheck

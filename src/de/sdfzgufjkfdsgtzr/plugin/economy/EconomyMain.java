@@ -119,7 +119,7 @@ public class EconomyMain implements CommandExecutor {
 
             result = results.getDouble("BALANCE");
         }catch(SQLException e){
-            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + plugin.PLUGIN_NAME + " Error getting Balance for UUID: " + uuid.toString());
+            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + plugin.PLUGIN_NAME + " Error receiving Balance for UUID: " + uuid.toString());
         }
         return result;
     }
@@ -134,7 +134,7 @@ public class EconomyMain implements CommandExecutor {
 
             result = results.getDouble("BALANCE");
         }catch(SQLException e){
-            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + plugin.PLUGIN_NAME + " Error getting Balance for User: " + name);
+            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + plugin.PLUGIN_NAME + " Error receiving Balance for User: " + name);
         }
         return result;
     }
@@ -149,7 +149,7 @@ public class EconomyMain implements CommandExecutor {
 
             result = results.getString("UUID");
         }catch(SQLException e){
-            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + plugin.PLUGIN_NAME + " Error getting Balance for UUID: " + name);
+            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + plugin.PLUGIN_NAME + " Error receiving Balance for UUID: " + name);
         }
         return UUID.fromString(result);
     }

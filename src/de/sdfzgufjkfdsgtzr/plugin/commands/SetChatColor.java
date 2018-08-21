@@ -6,14 +6,17 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 public class SetChatColor implements CommandExecutor {
 
     private Main plugin;
+    private FileConfiguration cfg;
 
     public SetChatColor(Main plugin){
         this.plugin = plugin;
+        this.cfg = plugin.getLanguageFile();
     }
 
     @Override
@@ -25,7 +28,7 @@ public class SetChatColor implements CommandExecutor {
                 if(args.length == 0){
                     plugin.cfg.set("user." + p.getUniqueId().toString() + ".prefix_color", plugin.cfg.getString("startup.prefix_color"));
                     plugin.cfg.set("user." + p.getUniqueId().toString() + ".chat_color", plugin.cfg.getString("startup.chat_color"));
-                    p.sendMessage(ChatColor.GRAY + "Deine Chat-Farben wurden auf den Standard zurückgesetzt:\n§" + plugin.cfg.getString("user." + p.getUniqueId().toString() + ".prefix_color") + "[Name] §" + plugin.cfg.getString("user." + p.getUniqueId().toString() + ".chat_color") + "[Nachricht]");
+                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.default") +  ":\n§" + plugin.cfg.getString("user." + p.getUniqueId().toString() + ".prefix_color") + "[Name] §" + plugin.cfg.getString("user." + p.getUniqueId().toString() + ".chat_color") + "[Chat]");
                     plugin.saveConfig();
                     return true;
                 }

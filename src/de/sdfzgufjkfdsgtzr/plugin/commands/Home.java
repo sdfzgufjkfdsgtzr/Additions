@@ -57,7 +57,7 @@ public class Home implements CommandExecutor {
                     return true;
                 }
             }else {
-                Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " We don't do this here!");
+                Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " The Console can't set it's home!");
                 return true;
             }
         }else{

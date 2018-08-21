@@ -27,11 +27,11 @@ public class ChunkNotifier implements CommandExecutor {
             if(p.hasPermission("spl.util.chunkNotifier")){
                 if(plugin.cfg.getBoolean("user." + p.getUniqueId().toString() + ".notify")){
                     plugin.cfg.set("user." + p.getUniqueId().toString() + ".notify", false);
-                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.cfg.getString("startup.language") + ".ChunkNotifier.No-Notify"));
+                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChunkNotifier.No-Notify"));
                     plugin.saveConfig();
                 }else{
                     plugin.cfg.set("user." + p.getUniqueId().toString() + ".notify", true);
-                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.cfg.getString("startup.language") + ".ChunkNotifier.Notify"));
+                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChunkNotifier.Notify"));
                     plugin.saveConfig();
                 }
                 return true;
