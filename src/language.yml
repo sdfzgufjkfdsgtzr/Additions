@@ -1,6 +1,5 @@
 german:
   ChunkNotifier:
-    Notify: '&7Du erhälst ab sofort Benachrichtigungen über Slime Chunks'
-    No-Notify: '&7Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr'
-
-  permission-missing: "&4Du hast keine Berechtigung das zu tun"
+    Notify: 'Du erhälst ab sofort Benachrichtigungen über Slime Chunks'
+    No-Notify: 'Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr'
+  permission-missing: 'Du hast keine Berechtigung das zu tun'

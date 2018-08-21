@@ -35,6 +35,7 @@ public class Main extends JavaPlugin {
     public void onEnable(){
         PluginManager pm;
         cfg = getConfig();
+        addLanguageDefaults();
         loadConfig();
         establishConnection();
 
@@ -55,8 +56,6 @@ public class Main extends JavaPlugin {
 
         maintenance = cfg.getBoolean("startup.maintenance");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + PLUGIN_NAME + " Successfully loaded!");
-
-        //EconomyMain.setBalance(EconomyMain.getUUID("sdfzgufjkfdsgtzr"), 100000.0);
     }
 
     @Override
@@ -91,14 +90,14 @@ public class Main extends JavaPlugin {
         cfg.options().copyDefaults(true);
         saveConfig();
         getLanguageFile().options().copyDefaults(true);
-        saveConfig(languageFile, file);
+        saveLanguageFile(languageFile, file);
     }
 
     public FileConfiguration getLanguageFile() {
         return languageFile;
     }
 
-    private void saveConfig(FileConfiguration languageFile, File file) {
+    private void saveLanguageFile(FileConfiguration languageFile, File file) {
         try {
             languageFile.save(file);
         } catch (IOException e) {
@@ -108,5 +107,12 @@ public class Main extends JavaPlugin {
 
     public String format(String format){
         return org.bukkit.ChatColor.translateAlternateColorCodes('&', format);
+    }
+
+    private void addLanguageDefaults(){
+        this.getLanguageFile().addDefault("german.permission-missing", "Du hast keine Berechtigung das zu tun");
+        this.getLanguageFile().addDefault("german.ChunkNotifier.Notify", "Du erhälst ab sofort Benachrichtigungen über Slime Chunks");
+        this.getLanguageFile().addDefault("german.ChunkNotifier.No-Notify", "Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr");
+        this.saveLanguageFile(this.languageFile, this.file);
     }
 }

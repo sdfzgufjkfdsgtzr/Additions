@@ -27,21 +27,21 @@ public class ChunkNotifier implements CommandExecutor {
             if(p.hasPermission("spl.util.chunkNotifier")){
                 if(plugin.cfg.getBoolean("user." + p.getUniqueId().toString() + ".notify")){
                     plugin.cfg.set("user." + p.getUniqueId().toString() + ".notify", false);
-                    p.sendMessage(cfg.getString("german.ChunkNotifier.No-Notify"));
+                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString("german.ChunkNotifier.No-Notify"));
                     plugin.saveConfig();
                 }else{
                     plugin.cfg.set("user." + p.getUniqueId().toString() + ".notify", true);
-                    p.sendMessage(cfg.getString("german.ChunkNotifier.Notify"));
+                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString("german.ChunkNotifier.Notify"));
                     plugin.saveConfig();
                 }
                 return true;
             }else{
-                p.sendMessage(plugin.format(cfg.getString("german.permission-missing")));
+                p.sendMessage(plugin.format(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString("german.permission-missing")));
+                return true;
             }
         }else{
             Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " It's only possible for players to use this command");
             return true;
         }
-        return false;
     }
 }
