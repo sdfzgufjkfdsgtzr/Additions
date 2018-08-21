@@ -6,6 +6,10 @@ de:
   Home:
     teleport-message: Du bist nun Zuhause
     teleport-usage: Bitte /home <set> nutzen
+  service:
+    deactivated: hat den Wartungsmodus beendet
+    activated: hat den Wartungsmodus aktiviert
+    value: Der Wartungsmodus steht auf
   ChatColor:
     default: Deine Chat-Farben wurden auf den Standard zurückgesetzt
     prefixColor: Die neue Farbe deines Namens ist

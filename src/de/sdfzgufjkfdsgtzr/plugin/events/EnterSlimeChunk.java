@@ -1,7 +1,9 @@
 package de.sdfzgufjkfdsgtzr.plugin.events;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
+import org.bukkit.ChatColor;
 import org.bukkit.Chunk;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,9 +14,11 @@ import java.util.Random;
 public class EnterSlimeChunk implements Listener {
 
     private Main plugin;
+    private FileConfiguration cfg;
 
     public EnterSlimeChunk(Main plugin){
         this.plugin = plugin;
+        this.cfg = plugin.getLanguageFile();
     }
 
     @EventHandler
@@ -26,10 +30,10 @@ public class EnterSlimeChunk implements Listener {
 
 
             if(isSlimeChunk(seed, newLocation) && (oldLocation != newLocation)){
-                e.getPlayer().sendMessage("§2Du befindest dich nun in einem Slimechunk");
+                e.getPlayer().sendMessage(ChatColor.DARK_GREEN + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChunkNotifier.enter-chunk"));
             }
-            else if(!isSlimeChunk(seed, newLocation) && (oldLocation != newLocation) && isSlimeChunk(seed,oldLocation)){
-                e.getPlayer().sendMessage("§4Du befindest dich nun nicht mehr in einem Slimechunk");
+            else if(!isSlimeChunk(seed, newLocation) && (oldLocation != newLocation) && isSlimeChunk(seed, oldLocation)){
+                e.getPlayer().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChunkNotifier.leave-chunk"));
             }
         }
     }

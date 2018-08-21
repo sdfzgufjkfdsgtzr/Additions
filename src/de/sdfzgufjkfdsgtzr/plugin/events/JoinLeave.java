@@ -3,6 +3,7 @@ package de.sdfzgufjkfdsgtzr.plugin.events;
 import de.sdfzgufjkfdsgtzr.plugin.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -11,8 +12,11 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class JoinLeave implements Listener {
 
     private Main plugin;
+    private FileConfiguration cfg;
+
     public JoinLeave(Main plugin){
         this.plugin = plugin;
+        this.cfg = plugin.getLanguageFile();
     }
 
     @EventHandler
@@ -34,14 +38,22 @@ public class JoinLeave implements Listener {
         }
         if(plugin.maintenance){
             if(!e.getPlayer().hasPermission("spl.util.service")){
-                e.getPlayer().kickPlayer("§cDir ist es momentan nicht erlaubt, den Server zu betreten!");
+                e.getPlayer().kickPlayer(ChatColor.RED + cfg.getString(plugin.lang + ".permission-join-missing"));
             }
         }
-        e.setJoinMessage("§7" + e.getPlayer().getName() + " ist jetzt §aonline§7!");
+        String part1 = "§7";
+        String part2 = e.getPlayer().getName();
+        String part3 = "§a";
+        String message = String.format(cfg.getString(plugin.lang + ".Event.join"), part1, part2, part3);
+        e.setJoinMessage(message);
     }
 
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e) {
-        e.setQuitMessage("§7" + e.getPlayer().getName() + " ist jetzt §coffline§7!");
+        String part1 = "§7";
+        String part2 = e.getPlayer().getName();
+        String part3 = "§c";
+        String message = String.format(cfg.getString(plugin.lang + ".Event.leave"), part1, part2, part3);
+        e.setQuitMessage(message);
     }
 }

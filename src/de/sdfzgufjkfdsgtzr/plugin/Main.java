@@ -113,8 +113,11 @@ public class Main extends JavaPlugin {
 
     private void addLanguageDefaults(){
         this.getLanguageFile().addDefault("de.permission-missing", "Du hast keine Berechtigung das zu tun");
-        this.getLanguageFile().addDefault("de.ChunkNotifier.Notify", "Du erhälst ab sofort Benachrichtigungen über Slime Chunks");
-        this.getLanguageFile().addDefault("de.ChunkNotifier.No-Notify", "Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr");
+        this.getLanguageFile().addDefault("de.permission-join-missing", "Du hast keine Berechtigung den Server zu betreten");
+        this.getLanguageFile().addDefault("de.ChunkNotifier.Notify", "Du erhälst ab sofort Benachrichtigungen über Slimechunks");
+        this.getLanguageFile().addDefault("de.ChunkNotifier.No-Notify", "Du erhälst ab sofort keine Benachrichtigungen über Slimechunks mehr");
+        this.getLanguageFile().addDefault("de.ChunkNotifier.enter-chunk", "Du befindest dich nun in einem Slimechunk");
+        this.getLanguageFile().addDefault("de.ChunkNotifier.leave-chunk", "Du befindest dich nun nicht mehr in einem Slimechunk");
         this.getLanguageFile().addDefault("de.Home.teleport-message", "Du bist nun Zuhause");
         this.getLanguageFile().addDefault("de.Home.teleport-usage", "Bitte /home <set> nutzen");
         this.getLanguageFile().addDefault("de.service.deactivated", "hat den Wartungsmodus beendet");
@@ -124,6 +127,8 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.ChatColor.prefixColor", "Die neue Farbe deines Namens ist");
         this.getLanguageFile().addDefault("de.ChatColor.chatColor", "Die neue Farbe deiner Nachricht ist");
         this.getLanguageFile().addDefault("de.ChatColor.misusage", "Du darfst nur %s oder %s nutzen!");
+        this.getLanguageFile().addDefault("de.Event.join", "%s%s ist jetzt %sonline");
+        this.getLanguageFile().addDefault("de.Event.leave", "%s%s ist jetzt %soffline");
         this.cfg.addDefault("startup.language", "de");
     }
 }
