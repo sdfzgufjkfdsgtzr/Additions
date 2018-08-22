@@ -25,12 +25,12 @@ __Notes__: The first argument specifies the color code for the player's name, th
 ## Events
 #### _Sleep_
 __Shoots when__: 1/3 of the server's players is laying in the bed\
-__Description__: The time will be set to sunrise in the overworld
+__Description__: The time will be set to sunrise in the overworld\
 __Notes__: Do not lay down in the nether ;)
 
 #### _Chat_
-__Shoots when__: A player is sending a message to chat
-__Description__: It is a custom chat format
+__Shoots when__: A player is sending a message to chat\
+__Description__: It is a custom chat format\
 __Format__: ```(Player's Prefix Color){Playername}:(Player's Chat Color){Message}```
 
 ## Permissions
