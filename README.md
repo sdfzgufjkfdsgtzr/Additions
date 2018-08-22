@@ -1,5 +1,22 @@
 # Additions
 
+## Commands
+#### _Maintenance_
+__Usage__: ```/service <on|off>```\
+__Description__: Toggles the service mode for the server. When no argument was given the current status will be displayed.
+__Notes__: When the Maintenance mode is active the servers slot value will be set to ```0``` and just players with the ```add.server.service``` permission will be allowed to join. Everyone else will just be denied joining in.\
+The Server will stay in maintenance mode as long as the value of ```startup.maintenance``` is ```true``` in the ```config.yml```. 
+
+#### _Home_
+__Usage__: ```/home <set>```\
+__Description__: Teleports the player to his home location when it was set before\
+__Notes__: The home location is editable in the plugin folder ```homes.yml``` once they are set
+
+#### _SlimeNotifier_
+__Usage__: ```/slimecheck```\
+__Description__: Shows a message in chat whenever the player enters a chunk that allows Slimes to spawn naturally\
+__Notes__: The default value is ```false``` and will be set everytime the player joins the server
+
 ## Permissions
 
 #### **Everything according to the server**
@@ -9,7 +26,7 @@
 #### **Everything according to the player**
 ##### _Home_
 * add.player.home
-##### _ChunkNotifier_
+##### _SlimeNotifier_
 * add.player.chunkNotifier
 ##### _ChatAppearance_
 * add.player.chat.appearance
@@ -18,7 +35,8 @@
 
 
 ## Translations
-Feel free to add your own translations to the languages.yml or just ask me to do so for everyone
+Feel free to add your own translations to the ```languages.yml``` or just ask me to add them to next version of it\
+When you do it by yourself: copy the structure provides for German translations and replace ```de``` to your country code. Then exchange the country code in the ```config.yml``` and you'll be ready to go.
 
 ### Current available translations
 * German
@@ -37,3 +55,14 @@ Feel free to add your own translations to the languages.yml or just ask me to do
 * optimize code
   * remove unnecessary fragments
   * add javadocs and comments
+* add version checker
+  
+## Disclaimer
+Please ensure you know that there are unforeseeable risks you may encounter resulting due to the plugin being a work-in-progress\
+To avoid any inconvenience please backup your server files before using this plugin.\
+If you encounter these special circumstances and you would like to avoid them the next time, please point out (by messaging me) as precisley as possible what you were doing and what other plugins you may have installed, which Spigot version you run etc.\
+
+I am not responsible for any inconvenience resulting due to the use of this plugin. Use on your own risk.  
+  
+## Want to support me?
+[Click here](http://wwf.panda.org/)  
