@@ -24,7 +24,7 @@ __Notes__: The home location is editable in the plugin folder ```plugin/Addition
 
 
 ## Translations
-Feel free to add your own translations to the languages.yml or just ask me to do so for everyone
+Feel free to add your own translations to the ```languages.yml``` or just ask me to add them to next version of it
 
 ### Current available translations
 * German
