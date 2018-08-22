@@ -42,7 +42,6 @@ public class Main extends JavaPlugin {
         establishConnection();
         this.lang = cfg.getString("startup.language");
 
-
         pm = getServer().getPluginManager();
         pm.registerEvents(new JoinLeave(this), this);
         pm.registerEvents(new ServerPing(this), this);
