@@ -15,14 +15,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.SQLException;
 
 
 public class Main extends JavaPlugin {
 
     public FileConfiguration cfg;
     public boolean maintenance;
-    public final String PLUGIN_NAME = "[PluginTools]";
+    public final String PLUGIN_NAME = "[Additions]";
     private File lang_file = new File(this.getDataFolder() + "/language.yml");
     public File home_file = new File(this.getDataFolder() + "/homes.yml");
     private FileConfiguration languageFile = YamlConfiguration.loadConfiguration(lang_file);
@@ -83,12 +82,8 @@ public class Main extends JavaPlugin {
         try {
             configFile.save(file);
         } catch (IOException e) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + PLUGIN_NAME + " Error loading locales. Please check the existance of the file \"language.yml\"");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + PLUGIN_NAME + " Error saving locales. Please check the existance of the file \"language.yml\"");
         }
-    }
-
-    public String format(String format){
-        return ChatColor.translateAlternateColorCodes('&', format);
     }
 
     private void addLanguageDefaults(){

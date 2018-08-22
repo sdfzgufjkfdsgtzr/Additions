@@ -17,7 +17,7 @@ public class Chat implements Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e){
         String message = "&" + plugin.cfg.getString("user." + e.getPlayer().getUniqueId().toString() + ".prefix_color") + e.getPlayer().getDisplayName() + "§7: &" + plugin.cfg.getString("user." + e.getPlayer().getUniqueId().toString() + ".chat_color") + e.getMessage();
-        e.setFormat(plugin.format(message));
+        e.setFormat(ChatColor.translateAlternateColorCodes('&', message));
     }
 
 }
