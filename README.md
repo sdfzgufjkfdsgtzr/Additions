@@ -31,7 +31,7 @@ __Notes__: Do not lay down in the nether ;)
 #### _Chat_
 __Shoots when__: A player is sending a message to chat\
 __Description__: It is a custom chat format\
-__Format__: ```(Player's Prefix Color){Playername}:(Player's Chat Color){Message}```
+__Format__: ```{PREFIX_COLOR}{Playername}:{CHAT_COLOR}{Message}```
 
 ## Permissions
 
