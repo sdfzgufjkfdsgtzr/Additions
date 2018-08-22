@@ -8,8 +8,8 @@ __Notes__: When the Maintenance mode is active the servers slot value will be se
 The Server will stay in maintenance mode as long as the value of ```startup.maintenance``` is ```true``` in the ```config.yml```. 
 
 #### _Home_
-__Usage__: ```/home```\
-__Description__: Teleports the player to his home location when it was set before using ```/home set```\
+__Usage__: ```/home <set>```\
+__Description__: Teleports the player to his home location when it was set before\
 __Notes__: The home location is editable in the plugin folder ```/Additions/homes.yml``` once they are set
 
 #### _SlimeNotifier_
