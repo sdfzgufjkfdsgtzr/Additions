@@ -103,7 +103,7 @@ public class Main extends JavaPlugin {
         try {
             languageFile.save(file);
         } catch (IOException e) {
-            e.printStackTrace();
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + PLUGIN_NAME + " Error loading locales..");
         }
     }
 
