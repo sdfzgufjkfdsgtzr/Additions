@@ -33,6 +33,7 @@ public class Main extends JavaPlugin {
     public String lang;
 
 
+
     @Override
     public void onEnable(){
         PluginManager pm;
@@ -103,7 +104,7 @@ public class Main extends JavaPlugin {
         try {
             languageFile.save(file);
         } catch (IOException e) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + PLUGIN_NAME + " Error loading locales..");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + PLUGIN_NAME + " Error loading locales. Please check the existance of the file \"language.yml\"");
         }
     }
 
