@@ -24,7 +24,7 @@ public class Home implements CommandExecutor {
     public Home(Main plugin){
         this.plugin = plugin;
         this.lang = plugin.getLanguageFile();
-        homes = plugin.getHomeFile();
+        this.homes = plugin.getHomeFile();
     }
 
 
