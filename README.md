@@ -1,10 +1,14 @@
 # Additions
 
 ## Commands
+#### _SlimeNotifier_
+__Usage__: ```/slimecheck```\
+__Description__: Shows a message in chat whenever the player enters a chunk that allows Slimes to spawn naturally\
+__Notes__: The default value is ```false``` and will be set everytime the player joins the server
 #### _Home_
 __Usage__: ```/home```\
 __Description__: Teleports the player to his home location when it was set before using ```/home set```\
-__Notes__: The home location is editable in the plugin folder ```plugin/Additions/homes.yml``` once they are set
+__Notes__: The home location is editable in the plugin folder ```/Additions/homes.yml``` once they are set
 
 ## Permissions
 
@@ -15,7 +19,7 @@ __Notes__: The home location is editable in the plugin folder ```plugin/Addition
 #### **Everything according to the player**
 ##### _Home_
 * add.player.home
-##### _ChunkNotifier_
+##### _SlimeNotifier_
 * add.player.chunkNotifier
 ##### _ChatAppearance_
 * add.player.chat.appearance
