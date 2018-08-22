@@ -2,11 +2,11 @@
 
 ## Permissions
 
-#### Everything according to the server
+#### **Everything according to the server**
 ##### Maintenance
 * add.server.service
 
-#### Everything according to the player
+#### **Everything according to the player**
 ##### Home
 * add.player.home
 ##### ChunkNotifier
@@ -14,7 +14,7 @@
 ##### ChatAppearance
 * add.player.chat.appearance
 
-#### Everything according to the world
+#### **Everything according to the world**
 
 
 ## Translations
