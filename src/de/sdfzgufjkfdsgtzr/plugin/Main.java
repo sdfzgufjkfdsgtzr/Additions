@@ -1,13 +1,11 @@
 package de.sdfzgufjkfdsgtzr.plugin;
 
-import de.sdfzgufjkfdsgtzr.plugin.SQL.SQLGetterSetter;
 import de.sdfzgufjkfdsgtzr.plugin.commands.ChunkNotifier;
 import de.sdfzgufjkfdsgtzr.plugin.commands.Home;
 import de.sdfzgufjkfdsgtzr.plugin.commands.Maintenance;
 import de.sdfzgufjkfdsgtzr.plugin.commands.SetChatColor;
-import de.sdfzgufjkfdsgtzr.plugin.economy.EconomyMain;
+import de.sdfzgufjkfdsgtzr.plugin.economy.Economy;
 import de.sdfzgufjkfdsgtzr.plugin.events.*;
-import de.sdfzgufjkfdsgtzr.plugin.SQL.MySQLCon;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -24,9 +22,6 @@ public class Main extends JavaPlugin {
 
     public FileConfiguration cfg;
     public boolean maintenance;
-    public final SQLGetterSetter sqlgetset = new SQLGetterSetter(this);
-    public MySQLCon con;
-    public boolean conActive = true;
     public final String PLUGIN_NAME = "[PluginTools]";
     private File lang_file = new File(this.getDataFolder() + "/language.yml");
     public File home_file = new File(this.getDataFolder() + "/homes.yml");
@@ -42,7 +37,6 @@ public class Main extends JavaPlugin {
         cfg = getConfig();
         addLanguageDefaults();
         loadConfig();
-        establishConnection();
         this.lang = cfg.getString("startup.language");
 
         pm = getServer().getPluginManager();
@@ -55,8 +49,8 @@ public class Main extends JavaPlugin {
         this.getCommand("color").setExecutor(new SetChatColor(this));
         this.getCommand("home").setExecutor(new Home(this));
         this.getCommand("service").setExecutor(new Maintenance(this));
-        this.getCommand("balance").setExecutor(new EconomyMain(this));
-        this.getCommand("pay").setExecutor(new EconomyMain(this));
+        this.getCommand("balance").setExecutor(new Economy(this));
+        this.getCommand("pay").setExecutor(new Economy(this));
         this.getCommand("slimecheck").setExecutor(new ChunkNotifier(this));
 
         maintenance = cfg.getBoolean("startup.maintenance");
@@ -65,31 +59,9 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onDisable(){
-        try {
-            con.getConnection().close();
-            Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + PLUGIN_NAME + " SQL connection successfully terminated!");
-        }catch(SQLException e){
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + PLUGIN_NAME + " SQL connection could not be terminated!");
-        }
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + PLUGIN_NAME +" Successfully unloaded!");
     }
 
-    private void establishConnection(){
-        try{
-            con = new MySQLCon(cfg.getString("database.host"),
-                    cfg.getString("database.database"), cfg.getString("database.user"),
-                    cfg.getString("database.password"), cfg.getString("database.table"),
-                    cfg.getInt("database.port"), this);
-        }catch(Exception e){
-            conActive = false;
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + PLUGIN_NAME +" For full functionality please consider establishing a MySQL connection!");
-        }
-        if(conActive){
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_GREEN + PLUGIN_NAME + " SQL connection successfully established");
-        }else{
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + PLUGIN_NAME +" SQL connection could not be established -- May cause issues!");
-        }
-    }
 
     private void loadConfig(){
         cfg.options().copyDefaults(true);
