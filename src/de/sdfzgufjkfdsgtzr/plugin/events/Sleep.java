@@ -31,9 +31,9 @@ public class Sleep implements Listener {
             world.setTime(0);
             world.setThundering(false);
             world.setStorm(false);
-            e.getPlayer().getServer().broadcastMessage(ChatColor.GRAY + cfg.getString(plugin.lang + ".event.enter-bed"));
+            e.getPlayer().getServer().broadcastMessage(ChatColor.GRAY + cfg.getString(plugin.lang + ".event.sleep"));
         } else{
-            String message = String.format(ChatColor.GRAY + cfg.getString(plugin.lang + ".event.leave-bed"),  playersSleeping.size(), (world.getPlayers().size() / 3));
+            String message = String.format(ChatColor.GRAY + cfg.getString(plugin.lang + ".event.no-sleep"),  playersSleeping.size(), (world.getPlayers().size() / 3));
             e.getPlayer().sendMessage(message);
         }
     }

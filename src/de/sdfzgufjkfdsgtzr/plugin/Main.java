@@ -28,8 +28,10 @@ public class Main extends JavaPlugin {
     public MySQLCon con;
     public boolean conActive = true;
     public final String PLUGIN_NAME = "[PluginTools]";
-    private File file = new File(this.getDataFolder() + "/language.yml");
-    private FileConfiguration languageFile = YamlConfiguration.loadConfiguration(file);
+    private File lang_file = new File(this.getDataFolder() + "/language.yml");
+    public File home_file = new File(this.getDataFolder() + "/homes.yml");
+    private FileConfiguration languageFile = YamlConfiguration.loadConfiguration(lang_file);
+    private FileConfiguration homeFile = YamlConfiguration.loadConfiguration(home_file);
     public String lang;
 
 
@@ -93,16 +95,21 @@ public class Main extends JavaPlugin {
         cfg.options().copyDefaults(true);
         saveConfig();
         getLanguageFile().options().copyDefaults(true);
-        saveLanguageFile(languageFile, file);
+        saveConfigFile(languageFile, lang_file);
+        saveConfigFile(homeFile, home_file);
     }
 
     public FileConfiguration getLanguageFile() {
         return languageFile;
     }
 
-    private void saveLanguageFile(FileConfiguration languageFile, File file) {
+    public FileConfiguration getHomeFile() {
+        return homeFile;
+    }
+
+    public void saveConfigFile(FileConfiguration configFile, File file) {
         try {
-            languageFile.save(file);
+            configFile.save(file);
         } catch (IOException e) {
             Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + PLUGIN_NAME + " Error loading locales. Please check the existance of the file \"language.yml\"");
         }
@@ -132,8 +139,8 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.ChatColor.misusage", "Du darfst nur %s oder %s nutzen!");
         this.getLanguageFile().addDefault("de.event.join", "&7%s ist jetzt &aonline");
         this.getLanguageFile().addDefault("de.event.leave", "&7%s ist jetzt &aoffline");
-        this.getLanguageFile().addDefault("de.event.enter-bed", "Es schlafen nur %d von %d nötigen Spielern!");
-        this.getLanguageFile().addDefault("de.event.leave-bed", "Die Sonne geht langsam auf...");
+        this.getLanguageFile().addDefault("de.event.sleep", "Die Sonne geht langsam auf...");
+        this.getLanguageFile().addDefault("de.event.no-sleep", "Es schlafen nur %d von %d nötigen Spielern!");
         this.cfg.addDefault("startup.language", "de");
     }
 }

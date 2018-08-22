@@ -24,8 +24,7 @@ public class Home implements CommandExecutor {
     public Home(Main plugin){
         this.plugin = plugin;
         this.lang = plugin.getLanguageFile();
-        file = new File(plugin.getDataFolder() + "/homes.yml");
-        homes = YamlConfiguration.loadConfiguration(file);
+        homes = plugin.getHomeFile();
     }
 
 
@@ -74,6 +73,7 @@ public class Home implements CommandExecutor {
         homes.set("users." + uuid.toString() + ".x", x);
         homes.set("users." + uuid.toString() + ".y", y);
         homes.set("users." + uuid.toString() + ".z", z);
+        plugin.saveConfigFile(homes, plugin.home_file);
     }
 
 
