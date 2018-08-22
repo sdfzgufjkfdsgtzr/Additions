@@ -32,6 +32,7 @@ public class Main extends JavaPlugin {
     private FileConfiguration languageFile = YamlConfiguration.loadConfiguration(file);
     public String lang;
 
+
     @Override
     public void onEnable(){
         PluginManager pm;
