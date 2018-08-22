@@ -54,3 +54,6 @@ Feel free to add your own translations to the ```languages.yml``` or just ask me
 * optimize code
   * remove unnecessary fragments
   * add javadocs and comments
+  
+## Want to support me?
+[Click here](http://wwf.panda.org/)  
