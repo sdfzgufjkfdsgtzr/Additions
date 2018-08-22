@@ -27,7 +27,7 @@ public class Maintenance implements CommandExecutor
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("on")) {
                         for (Player p: Bukkit.getOnlinePlayers()) {
-                            if(p.hasPermission("spl.util.service")) {
+                            if (p.hasPermission("add.server.service")) {
                                 String name = sender.getName();
                                 String message = String.format(cfg.getString(plugin.lang + ".service.activated"), name);
                                 p.sendMessage(ChatColor.DARK_GREEN + plugin.PLUGIN_NAME + " " + message);
@@ -38,7 +38,7 @@ public class Maintenance implements CommandExecutor
                         plugin.saveConfig();
                     } else if (args[0].equalsIgnoreCase("off")) {
                         for (Player p: Bukkit.getOnlinePlayers()) {
-                            if (p.hasPermission("spl.util.service")) {
+                            if (p.hasPermission("add.server.service")) {
                                 String name = sender.getName();
                                 String message = String.format(cfg.getString(plugin.lang + ".service.deactivated"), name);
                                 p.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + message);

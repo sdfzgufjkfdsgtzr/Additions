@@ -1,6 +1,7 @@
 package de.sdfzgufjkfdsgtzr.plugin.events;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -31,7 +32,11 @@ public class Sleep implements Listener {
             world.setTime(0);
             world.setThundering(false);
             world.setStorm(false);
-            e.getPlayer().getServer().broadcastMessage(ChatColor.GRAY + cfg.getString(plugin.lang + ".event.sleep"));
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                if (p.getWorld().equals(world)) {
+                    p.sendMessage(ChatColor.GRAY + cfg.getString(plugin.lang + ".event.sleep"));
+                }
+            }
         } else{
             String message = String.format(ChatColor.GRAY + cfg.getString(plugin.lang + ".event.no-sleep"),  playersSleeping.size(), (world.getPlayers().size() / 3));
             e.getPlayer().sendMessage(message);
