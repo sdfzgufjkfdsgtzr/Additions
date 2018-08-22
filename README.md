@@ -17,6 +17,34 @@ __Usage__: ```/slimecheck```\
 __Description__: Shows a message in chat whenever the player enters a chunk that allows Slimes to spawn naturally\
 __Notes__: The default value is ```false``` and will be set everytime the player joins the server
 
+#### _ChatAppearance_
+__Usage__: ```/color <color_code> <color_code>```\
+__Description__: Sets the display name and the chat color to the specified color codes.\
+__Notes__: The first argument specifies the color code for the player's name, the second argument specifies the format code for the text messagees the player will send.\When no argument is given, the command will restore the default values specified in the ```config.yml```. The player's name is specified by the format code set at ```startup.prefix_color```, the messages format is specified by the format code set at ```startup.chat_color```.
+
+## Events
+#### _Sleep_
+__Shoots when__: 1/3 of the server's players is laying in the bed\
+__Description__: The time will be set to sunrise in the overworld\
+__Notes__: Do not lay down in the nether ;)
+
+#### _Chat_
+__Shoots when__: A player is sending a message to chat\
+__Description__: It is a custom chat format\
+__Format__: ```{PREFIX_COLOR}{Playername}:{CHAT_COLOR}{Message}```
+
+#### _JoinTheServer_
+__Shoots when__: A player is joining the server\
+__Description__: It is a custom join message\
+__Format__: ```{Playername} is now {LIGHT_GREEN}online```\
+__Notes__: The format is fully customizable in the ```languages.yml``` 
+
+#### _LeaveTheServer_
+__Shoots when__: A player is leaving the server\
+__Description__: It is a custom join message\
+__Format__: ```{Playername} is now {LIGHT_RED}offline```\
+__Notes__: The format is fully customizable in the ```languages.yml``` 
+
 ## Permissions
 
 #### **Everything according to the server**
@@ -46,21 +74,23 @@ When you do it by yourself: copy the structure provides for German translations 
 
 
 ## Todo
-* Expand Home's functionality
-  * Multiple homes
-  * Delete homes
-* Add permissions system
-* Add Economy system
-  * provide API for access by other developers
-* optimize code
-  * remove unnecessary fragments
-  * add javadocs and comments
-* add version checker
+- [ ] Expand Home's functionality
+  - [ ] Multiple homes
+  - [ ] Delete homes
+- [ ] make Sleep event configurable
+- [ ] Add permissions system
+- [ ] Add Economy system
+  - [ ] provide API for access by other developers
+- [ ] optimize code
+  - [ ] remove unnecessary fragments
+  - [ ] add javadocs and comments
+- [ ] add version checker
+- [X] keep this page up-to-date
   
 ## Disclaimer
 Please ensure you know that there are unforeseeable risks you may encounter resulting due to the plugin being a work-in-progress\
 To avoid any inconvenience please backup your server files before using this plugin.\
-If you encounter these special circumstances and you would like to avoid them the next time, please point out (by messaging me) as precisley as possible what you were doing and what other plugins you may have installed, which Spigot version you run etc.\
+If you encounter these special circumstances and you would like to avoid them the next time, please point out (by messaging me) as precisely as possible what you were doing and what other plugins you may have installed, which Spigot version you run etc.
 
 I am not responsible for any inconvenience resulting due to the use of this plugin. Use on your own risk.  
   
