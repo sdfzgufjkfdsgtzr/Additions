@@ -22,6 +22,17 @@ __Usage__: ```/color <color_code> <color_code>```\
 __Description__: Sets the display name and the chat color to the specified color codes.\
 __Notes__: The first argument specifies the color code for the player's name, the second argument specifies the format code for the text messagees the player will send.\When no argument is given, the command will restore the default values specified in the ```config.yml```. The player's name is specified by the format code set at ```startup.prefix_color```, the messages format is specified by the format code set at ```startup.chat_color```.
 
+## Events
+#### _Sleep_
+__Shoots when__: 1/3 of the server's players is laying in the bed\
+__Description__: The time will be set to sunrise in the overworld
+__Notes__: Do not lay down in the nether ;)
+
+#### _Chat_
+__Shoots when__: A player is sending a message to chat
+__Description__: It is a custom chat format
+__Format__: ```(Player's Prefix Color){Playername}:(Player's Chat Color){Message}```
+
 ## Permissions
 
 #### **Everything according to the server**
@@ -54,6 +65,7 @@ When you do it by yourself: copy the structure provides for German translations 
 - [ ] Expand Home's functionality
   - [ ] Multiple homes
   - [ ] Delete homes
+- [ ] make Sleep event configurable
 - [ ] Add permissions system
 - [ ] Add Economy system
   - [ ] provide API for access by other developers
