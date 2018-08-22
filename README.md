@@ -3,7 +3,7 @@
 ## Commands
 #### _Maintenance_
 __Usage__: ```/service <on|off>```\
-__Description__: Toggles the service mode for the server. When no argument was given the current status will be displayed.
+__Description__: Toggles the service mode for the server. When no argument was given the current status will be displayed.\
 __Notes__: When the Maintenance mode is active the servers slot value will be set to ```0``` and just players with the ```add.server.service``` permission will be allowed to join. Everyone else will just be denied joining in.\
 The Server will stay in maintenance mode as long as the value of ```startup.maintenance``` is ```true``` in the ```config.yml```. 
 
