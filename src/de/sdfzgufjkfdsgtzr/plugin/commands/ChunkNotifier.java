@@ -24,7 +24,7 @@ public class ChunkNotifier implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
-            if(p.hasPermission("spl.util.chunkNotifier")){
+            if (p.hasPermission("add.player.chunkNotifier")) {
                 if(plugin.cfg.getBoolean("user." + p.getUniqueId().toString() + ".notify")){
                     plugin.cfg.set("user." + p.getUniqueId().toString() + ".notify", false);
                     p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChunkNotifier.No-Notify"));

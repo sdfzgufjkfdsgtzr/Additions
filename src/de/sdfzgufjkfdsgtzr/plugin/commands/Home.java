@@ -30,7 +30,7 @@ public class Home implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
-            if (sender.hasPermission("spl.util.home")) {
+            if (sender.hasPermission("add.player.home")) {
                 Player p = (Player) sender;
                 if (args.length == 0) {
                     int coords[] = getHome(p.getUniqueId());

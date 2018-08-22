@@ -22,7 +22,7 @@ public class SetChatColor implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(sender instanceof Player){
-            if(sender.hasPermission("spl.util.chatformat")){
+            if (sender.hasPermission("add.player.chat.appearance")) {
                 Player p = (Player) sender;
                 String allowed = "[a-f[k-o]0-9]";
                 if(args.length == 0){

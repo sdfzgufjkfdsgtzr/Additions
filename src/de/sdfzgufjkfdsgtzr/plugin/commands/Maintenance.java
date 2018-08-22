@@ -23,7 +23,7 @@ public class Maintenance implements CommandExecutor
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
         if (command.getName().equalsIgnoreCase("service")) {
-            if(sender.hasPermission("spl.util.service")) {
+            if (sender.hasPermission("add.server.service")) {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("on")) {
                         for (Player p: Bukkit.getOnlinePlayers()) {
