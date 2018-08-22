@@ -13,7 +13,7 @@
 
 
 ## Translations
-Feel free to add your own translations to the languages.yml
+Feel free to add your own translations to the languages.yml or just ask me to do so for everyone
 
 ### Current available translations
 * German
