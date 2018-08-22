@@ -1,5 +1,9 @@
 # Additions
 
+## Commands
+#### _Home_
+Usage: ```java /home <set>```
+
 ## Permissions
 
 #### **Everything according to the server**
