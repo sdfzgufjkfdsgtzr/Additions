@@ -36,13 +36,13 @@ __Format__: ```{PREFIX_COLOR}{Playername}:{CHAT_COLOR}{Message}```
 #### _JoinTheServer_
 __Shoots when__: A player is joining the server\
 __Description__: It is a custom join message\
-__Format__: ```{Playername} is now {LIGHT_GREEN}online```
+__Format__: ```{Playername} is now {LIGHT_GREEN}online```\
 __Notes__: The format is fully customizable in the ```languages.yml``` 
 
 #### _LeaveTheServer_
 __Shoots when__: A player is leaving the server\
 __Description__: It is a custom join message\
-__Format__: ```{Playername} is now {LIGHT_RED}offline```
+__Format__: ```{Playername} is now {LIGHT_RED}offline```\
 __Notes__: The format is fully customizable in the ```languages.yml``` 
 
 ## Permissions
