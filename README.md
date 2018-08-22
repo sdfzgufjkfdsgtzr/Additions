@@ -17,6 +17,11 @@ __Usage__: ```/slimecheck```\
 __Description__: Shows a message in chat whenever the player enters a chunk that allows Slimes to spawn naturally\
 __Notes__: The default value is ```false``` and will be set everytime the player joins the server
 
+#### _ChatAppearance_
+__Usage__: ```/color <color_code> <color_code>```\
+__Description__: Sets the display name and the chat color to the specified color codes.
+__Notes__: The first argument specifies the color code for the player's name, the second argument specifies the format code for the text messagees the player will send.\When no argument is given, the command will restore the default values specified in the ```config.yml```. The player's name is specified by the format code set at ```startup.prefix_color```, the messages format is specified by the format code set at ```startup.chat_color```.
+
 ## Permissions
 
 #### **Everything according to the server**
@@ -56,12 +61,12 @@ When you do it by yourself: copy the structure provides for German translations 
   - [ ] remove unnecessary fragments
   - [ ] add javadocs and comments
 - [ ] add version checker
-- [ ] keep this page up-to-date
+- [X] keep this page up-to-date
   
 ## Disclaimer
 Please ensure you know that there are unforeseeable risks you may encounter resulting due to the plugin being a work-in-progress\
 To avoid any inconvenience please backup your server files before using this plugin.\
-If you encounter these special circumstances and you would like to avoid them the next time, please point out (by messaging me) as precisley as possible what you were doing and what other plugins you may have installed, which Spigot version you run etc.\
+If you encounter these special circumstances and you would like to avoid them the next time, please point out (by messaging me) as precisley as possible what you were doing and what other plugins you may have installed, which Spigot version you run etc.
 
 I am not responsible for any inconvenience resulting due to the use of this plugin. Use on your own risk.  
   
