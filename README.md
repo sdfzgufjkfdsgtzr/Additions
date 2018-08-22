@@ -3,15 +3,15 @@
 ## Permissions
 
 #### **Everything according to the server**
-##### Maintenance
+##### _Maintenance_
 * add.server.service
 
 #### **Everything according to the player**
-##### Home
+##### _Home_
 * add.player.home
-##### ChunkNotifier
+##### _ChunkNotifier_
 * add.player.chunkNotifier
-##### ChatAppearance
+##### _ChatAppearance_
 * add.player.chat.appearance
 
 #### **Everything according to the world**
