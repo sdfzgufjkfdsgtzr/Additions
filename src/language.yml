@@ -22,6 +22,6 @@ de:
     misusage: Du darfst nur %s oder %s nutzen!
   event:
     join: '&7%s ist jetzt &aonline'
-    leave: '&7%s ist jetzt &aoffline'
+    leave: '&7%s ist jetzt &coffline'
     sleep: Die Sonne geht langsam auf...
     no-sleep: Es schlafen nur %d von %d nötigen Spielern!

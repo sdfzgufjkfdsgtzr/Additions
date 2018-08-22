@@ -105,7 +105,7 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.ChatColor.chatColor", "Die neue Farbe deiner Nachricht ist: %s%s");
         this.getLanguageFile().addDefault("de.ChatColor.misusage", "Du darfst nur %s oder %s nutzen!");
         this.getLanguageFile().addDefault("de.event.join", "&7%s ist jetzt &aonline");
-        this.getLanguageFile().addDefault("de.event.leave", "&7%s ist jetzt &aoffline");
+        this.getLanguageFile().addDefault("de.event.leave", "&7%s ist jetzt &coffline");
         this.getLanguageFile().addDefault("de.event.sleep", "Die Sonne geht langsam auf...");
         this.getLanguageFile().addDefault("de.event.no-sleep", "Es schlafen nur %d von %d nötigen Spielern!");
         this.cfg.addDefault("startup.language", "de");

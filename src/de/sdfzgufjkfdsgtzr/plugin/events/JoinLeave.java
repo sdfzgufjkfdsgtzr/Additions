@@ -7,8 +7,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.*;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.UUID;
 
@@ -33,7 +34,6 @@ public class JoinLeave implements Listener {
         String player = e.getPlayer().getName();
         String message = ChatColor.translateAlternateColorCodes('&',String.format(cfg.getString(plugin.lang + ".event.join"), player));
         e.setJoinMessage(message);
-        e.getPlayer().sendMessage("§CBitte das Zuhause neu setzen!");
     }
 
     @EventHandler
