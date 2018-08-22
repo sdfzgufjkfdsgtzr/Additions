@@ -2,23 +2,26 @@ de:
   permission-missing: Du hast keine Berechtigung das zu tun
   permission-join-missing: Du hast keine Berechtigung den Server zu betreten
   ChunkNotifier:
-    Notify: Du erhälst ab sofort Benachrichtigungen über Slime Chunks
-    No-Notify: Du erhälst ab sofort keine Benachrichtigungen über Slime Chunks mehr
+    Notify: Du erhälst ab sofort Benachrichtigungen über Slimechunks
+    No-Notify: Du erhälst ab sofort keine Benachrichtigungen über Slimechunks mehr
     enter-chunk: Du befindest dich nun in einem Slimechunk
     leave-chunk: Du befindest dich nun nicht mehr in einem Slimechunk
   Home:
     teleport-message: Du bist nun Zuhause
     teleport-usage: Bitte /home <set> nutzen
   service:
-    deactivated: %s hat den Wartungsmodus beendet
-    activated: %s hat den Wartungsmodus aktiviert
+    deactivated: '%s hat den Wartungsmodus deaktiviert'
+    activated: '%s hat den Wartungsmodus aktiviert'
     ping: Der Server ist gerade im Wartungsmodus
-    value: Der Wartungsmodus steht auf: %b
+    value: 'Der Wartungsmodus steht auf: %b'
   ChatColor:
     default: Deine Chat-Farben wurden auf den Standard zurückgesetzt
-    prefixColor: Die neue Farbe deines Namens ist: %s
-    chatColor: Die neue Farbe deiner Nachricht ist: %s
+    prefixColor: 'Die neue Farbe deines Namens ist: %s%s'
+    chatColor: 'Die neue Farbe deiner Nachricht ist: %s%s'
     misusage: Du darfst nur %s oder %s nutzen!
   Event:
-    join: %s%s ist jetzt %sonline
-    leave: %s%s ist jetzt %soffline
+    join: '&7%s ist jetzt &aonline'
+    leave: '&7%s ist jetzt &aoffline'
+  sleep:
+    toofew: Es schlafen nur %d von %d nötigen Spielern!
+    sunrise: Die Sonne geht langsam auf...

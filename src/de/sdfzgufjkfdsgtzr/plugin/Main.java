@@ -46,7 +46,7 @@ public class Main extends JavaPlugin {
         pm = getServer().getPluginManager();
         pm.registerEvents(new JoinLeave(this), this);
         pm.registerEvents(new ServerPing(this), this);
-        pm.registerEvents(new Sleep(), this);
+        pm.registerEvents(new Sleep(this), this);
         pm.registerEvents(new Chat(this), this);
         pm.registerEvents(new EnterSlimeChunk(this), this);
 
@@ -109,7 +109,7 @@ public class Main extends JavaPlugin {
     }
 
     public String format(String format){
-        return org.bukkit.ChatColor.translateAlternateColorCodes('&', format);
+        return ChatColor.translateAlternateColorCodes('&', format);
     }
 
     private void addLanguageDefaults(){
@@ -119,8 +119,9 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.ChunkNotifier.No-Notify", "Du erhälst ab sofort keine Benachrichtigungen über Slimechunks mehr");
         this.getLanguageFile().addDefault("de.ChunkNotifier.enter-chunk", "Du befindest dich nun in einem Slimechunk");
         this.getLanguageFile().addDefault("de.ChunkNotifier.leave-chunk", "Du befindest dich nun nicht mehr in einem Slimechunk");
-        this.getLanguageFile().addDefault("de.Home.teleport-message", "Du bist nun Zuhause");
-        this.getLanguageFile().addDefault("de.Home.teleport-usage", "Bitte /home <set> nutzen");
+        this.getLanguageFile().addDefault("de.home.teleport-message", "Du bist nun Zuhause");
+        this.getLanguageFile().addDefault("de.home.teleport-usage", "Bitte /home <set> nutzen");
+        this.getLanguageFile().addDefault("de.home.set", "Dein Zuhause wurde bei X: %d Y: %d Z: %d gesetzt");
         this.getLanguageFile().addDefault("de.service.deactivated", "%s hat den Wartungsmodus deaktiviert");
         this.getLanguageFile().addDefault("de.service.activated", "%s hat den Wartungsmodus aktiviert");
         this.getLanguageFile().addDefault("de.service.ping", "Der Server ist gerade im Wartungsmodus");
@@ -129,8 +130,10 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.ChatColor.prefixColor", "Die neue Farbe deines Namens ist: %s%s");
         this.getLanguageFile().addDefault("de.ChatColor.chatColor", "Die neue Farbe deiner Nachricht ist: %s%s");
         this.getLanguageFile().addDefault("de.ChatColor.misusage", "Du darfst nur %s oder %s nutzen!");
-        this.getLanguageFile().addDefault("de.Event.join", "%s%s ist jetzt %sonline");
-        this.getLanguageFile().addDefault("de.Event.leave", "%s%s ist jetzt %soffline");
+        this.getLanguageFile().addDefault("de.event.join", "&7%s ist jetzt &aonline");
+        this.getLanguageFile().addDefault("de.event.leave", "&7%s ist jetzt &aoffline");
+        this.getLanguageFile().addDefault("de.event.enter-bed", "Es schlafen nur %d von %d nötigen Spielern!");
+        this.getLanguageFile().addDefault("de.event.leave-bed", "Die Sonne geht langsam auf...");
         this.cfg.addDefault("startup.language", "de");
     }
 }

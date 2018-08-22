@@ -1,6 +1,9 @@
 package de.sdfzgufjkfdsgtzr.plugin.events;
 
+import de.sdfzgufjkfdsgtzr.plugin.Main;
+import org.bukkit.ChatColor;
 import org.bukkit.World;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,30 +14,36 @@ import java.util.ArrayList;
 
 public class Sleep implements Listener {
 
-    private static ArrayList<Player> playersSleeping = new ArrayList<>();
+    private ArrayList<Player> playersSleeping = new ArrayList<>();
+    private FileConfiguration cfg;
+    private Main plugin;
+
+    public Sleep(Main plugin){
+        this.plugin = plugin;
+        this.cfg = plugin.getLanguageFile();
+    }
 
     @EventHandler
     public void onPlayerGoToBed(PlayerBedEnterEvent e){
+        World world = e.getPlayer().getWorld();
         playersSleeping.add(e.getPlayer());
-        System.out.println("Schlafende Spieler: " + playersSleeping.size() + " Anzahl Spieler in Welt: " + e.getPlayer().getWorld().getPlayers().size());
-        if((e.getPlayer().getWorld().getPlayers().size()/3 <= playersSleeping.size() && validTime(e.getPlayer().getWorld())) || (e.getPlayer().getWorld().getPlayers().size()/3 <= playersSleeping.size() && e.getPlayer().getWorld().isThundering())){
-            e.getPlayer().getWorld().setTime(0);
-            e.getPlayer().getServer().broadcastMessage("§7Die Sonne geht langsam auf...");
-            e.getPlayer().getWorld().setThundering(false);
-            e.getPlayer().getWorld().setStorm(false);
+        if((world.getPlayers().size()/3 <= playersSleeping.size() && validTime(world)) || (world.getPlayers().size()/3 <= playersSleeping.size() && world.isThundering())){
+            world.setTime(0);
+            world.setThundering(false);
+            world.setStorm(false);
+            e.getPlayer().getServer().broadcastMessage(ChatColor.GRAY + cfg.getString(plugin.lang + ".event.enter-bed"));
         } else{
-            e.getPlayer().sendMessage("§7Es ist momentan nicht möglich zu schlafen...");
-            e.getPlayer().sendMessage("§7Es schlafen nur " + playersSleeping.size() + " von " + e.getPlayer().getWorld().getPlayers().size() / 3 + " nötigen Spielern!");
+            String message = String.format(ChatColor.GRAY + cfg.getString(plugin.lang + ".event.leave-bed"),  playersSleeping.size(), (world.getPlayers().size() / 3));
+            e.getPlayer().sendMessage(message);
         }
     }
 
     @EventHandler
     public void onPlayerLeaveBed(PlayerBedLeaveEvent e){
         playersSleeping.remove(e.getPlayer());
-        System.out.println("Schlafende Spieler: " + playersSleeping.size() + " Anzahl Spieler in Welt: " + e.getPlayer().getWorld().getPlayers().size());
     }
 
-    private static boolean validTime(World w){
+    private boolean validTime(World w){
         long time = w.getTime();
         return (time < 24000 && time > 12000);
     }
