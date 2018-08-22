@@ -2,7 +2,9 @@
 
 ## Commands
 #### _Home_
-Usage: ```java /home <set>```
+_Usage_: ```/home```
+_Description_: Teleports the player to his home location when it was set before using ```/home set```
+_Notes_: The home location is editable in the plugin folder ```plugin/Additions/homes.yml``` once they are set
 
 ## Permissions
 
