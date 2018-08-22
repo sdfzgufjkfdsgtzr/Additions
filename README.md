@@ -46,16 +46,16 @@ When you do it by yourself: copy the structure provides for German translations 
 
 
 ## Todo
-- [] Expand Home's functionality
-  - [] Multiple homes
-  - [] Delete homes
-- [] Add permissions system
-- [] Add Economy system
-  - [] provide API for access by other developers
-- [] optimize code
-  - [] remove unnecessary fragments
-  - [] add javadocs and comments
-- [] add version checker
+- [ ] Expand Home's functionality
+  - [ ] Multiple homes
+  - [ ] Delete homes
+- [ ] Add permissions system
+- [ ] Add Economy system
+  - [ ] provide API for access by other developers
+- [ ] optimize code
+  - [ ] remove unnecessary fragments
+  - [ ] add javadocs and comments
+- [ ] add version checker
   
 ## Disclaimer
 Please ensure you know that there are unforeseeable risks you may encounter resulting due to the plugin being a work-in-progress\
