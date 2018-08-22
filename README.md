@@ -56,6 +56,7 @@ When you do it by yourself: copy the structure provides for German translations 
   - [ ] remove unnecessary fragments
   - [ ] add javadocs and comments
 - [ ] add version checker
+- [ ] keep this page up-to-date
   
 ## Disclaimer
 Please ensure you know that there are unforeseeable risks you may encounter resulting due to the plugin being a work-in-progress\
