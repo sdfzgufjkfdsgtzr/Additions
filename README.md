@@ -66,7 +66,7 @@ When you do it by yourself: copy the structure provides for German translations 
 ## Disclaimer
 Please ensure you know that there are unforeseeable risks you may encounter resulting due to the plugin being a work-in-progress\
 To avoid any inconvenience please backup your server files before using this plugin.\
-If you encounter these special circumstances and you would like to avoid them the next time, please point out (by messaging me) as precisley as possible what you were doing and what other plugins you may have installed, which Spigot version you run etc.
+If you encounter these special circumstances and you would like to avoid them the next time, please point out (by messaging me) as precisely as possible what you were doing and what other plugins you may have installed, which Spigot version you run etc.
 
 I am not responsible for any inconvenience resulting due to the use of this plugin. Use on your own risk.  
   
