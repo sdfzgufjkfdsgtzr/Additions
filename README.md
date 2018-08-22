@@ -33,7 +33,7 @@ Feel free to add your own translations to the languages.yml or just ask me to do
   * Delete homes
 * Add permissions system
 * Add Economy system
- * provide API for access by other developers
+  * provide API for access by other developers
 * optimize code
   * remove unnecessary fragments
   * add javadocs and comments
