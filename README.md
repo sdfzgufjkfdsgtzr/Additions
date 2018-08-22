@@ -24,9 +24,9 @@ Feel free to add your own translations to the languages.yml
 
 ## Todo
 * Expand Home's functionality
-** Multiple homes
-** Delete homes
+  * Multiple homes
+  * Delete homes
 * Add permissions system
 * optimize code
-** remove unnecessary fragments
-** add javadocs and comments
+  * remove unnecessary fragments
+  * add javadocs and comments
