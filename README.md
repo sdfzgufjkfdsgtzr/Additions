@@ -1,15 +1,20 @@
 # Additions
 
 ## Permissions
-### Everything according to the server
-#### Maintenance
+
+#### Everything according to the server
+##### Maintenance
 * add.server.service
-#### Home
+
+#### Everything according to the player
+##### Home
 * add.player.home
-#### ChunkNotifier
+##### ChunkNotifier
 * add.player.chunkNotifier
-#### ChatAppearance
+##### ChatAppearance
 * add.player.chat.appearance
+
+#### Everything according to the world
 
 
 ## Translations
