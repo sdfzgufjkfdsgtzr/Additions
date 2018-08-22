@@ -35,7 +35,9 @@ public class SetChatColor implements CommandExecutor {
                 else if(args.length == 1){
                     if(args[0].matches(allowed)){
                         plugin.cfg.set("user." + p.getUniqueId().toString() + ".prefix_color", args[0].charAt(0));
-                        p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.prefixColor") + ": §o" + args[0].charAt(0));
+                        String part1 = "§o";
+                        String message = String.format(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.prefixColor"), part1, args[0].charAt(0));
+                        p.sendMessage(message);
                     }
                     else{
                         String part1 = "§7a-f, k-o§4";
@@ -49,11 +51,15 @@ public class SetChatColor implements CommandExecutor {
                 else if(args.length == 2) {
                     if (args[0].matches(allowed)) {
                         plugin.cfg.set("user." + p.getUniqueId().toString() + ".prefix_color", args[0].charAt(0));
-                        p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.prefixColor") + ": §o" + args[0].charAt(0));
+                        String part1 = "§o";
+                        String message = String.format(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.prefixColor"), part1, args[0].charAt(0));
+                        p.sendMessage(message);
                     }
                     if (args[1].matches(allowed)) {
                         plugin.cfg.set("user." + p.getUniqueId().toString() + ".chat_color", args[1].charAt(0));
-                        p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.chatColor") + ": §o" + args[1].charAt(0));
+                        String part1 = "§o";
+                        String message = String.format(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.chatColor"), part1, args[1].charAt(0));
+                        p.sendMessage(message);
                     } else {
                         String part1 = "§7a-f, k-o§4";
                         String part2 = "§70-9§4";
@@ -68,7 +74,7 @@ public class SetChatColor implements CommandExecutor {
                 return true;
             }
         }else{
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " The Console can't edit it's chat appearence");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " The Console can't edit it's chat appearance");
             return true;
         }
         return false;

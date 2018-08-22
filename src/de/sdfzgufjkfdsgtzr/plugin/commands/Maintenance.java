@@ -26,19 +26,22 @@ public class Maintenance implements CommandExecutor
             if(sender.hasPermission("spl.util.service")) {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("on")) {
-                        plugin.cfg.set("startup.maintenance", true);
                         for (Player p: Bukkit.getOnlinePlayers()) {
                             if(p.hasPermission("spl.util.service")) {
-                                p.sendMessage(ChatColor.DARK_GREEN + plugin.PLUGIN_NAME + " " + sender.getName() + " " + cfg.getString(plugin.lang + ".service.activated"));
+                                String name = sender.getName();
+                                String message = String.format(cfg.getString(plugin.lang + ".service.activated"), name);
+                                p.sendMessage(ChatColor.DARK_GREEN + plugin.PLUGIN_NAME + " " + message);
                             }
                         }
+                        plugin.cfg.set("startup.maintenance", true);
                         plugin.maintenance = true;
                         plugin.saveConfig();
                     } else if (args[0].equalsIgnoreCase("off")) {
-                        plugin.getConfig().set("startup.maintenance", false);
                         for (Player p: Bukkit.getOnlinePlayers()) {
                             if (p.hasPermission("spl.util.service")) {
-                                p.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + sender.getName() + " " + cfg.getString(plugin.lang + ".service.deactivated"));
+                                String name = sender.getName();
+                                String message = String.format(cfg.getString(plugin.lang + ".service.deactivated"), name);
+                                p.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + message);
                             }
                         }
                         plugin.cfg.set("startup.maintenance", false);
@@ -47,11 +50,13 @@ public class Maintenance implements CommandExecutor
                     }
                     return true;
                 } else if (args.length == 0) {
-                    sender.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.get(plugin.lang + ".service.value") + " " + plugin.maintenance);
+                    boolean value = plugin.maintenance;
+                    String message = String.format(cfg.getString(plugin.lang + ".service.value"), value);
+                    sender.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + message);
                     return true;
                 }
             }else{
-                sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + cfg.getString(plugin.lang + ".permission-missing"));
+                sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " +cfg.getString(plugin.lang + ".permission-missing"));
                 return true;
             }
         }

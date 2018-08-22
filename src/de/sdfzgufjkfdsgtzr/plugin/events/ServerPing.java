@@ -2,6 +2,7 @@ package de.sdfzgufjkfdsgtzr.plugin.events;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerListPingEvent;
@@ -10,8 +11,11 @@ public class ServerPing implements Listener {
 
 
     private Main plugin;
+    private FileConfiguration cfg;
+
     public ServerPing(Main plugin){
         this.plugin = plugin;
+        this.cfg = plugin.getLanguageFile();
     }
 
     @EventHandler
@@ -19,7 +23,7 @@ public class ServerPing implements Listener {
         String motd = ChatColor.translateAlternateColorCodes('&', plugin.cfg.getString("startup.motd"));
         if (plugin.cfg.getBoolean("startup.maintenance"))
         {
-            e.setMotd("§4Der Server ist momentan im Wartungsmodus");
+            e.setMotd(ChatColor.RED + cfg.getString(plugin.lang + ".service.ping"));
             e.setMaxPlayers(0);
         }
         else
