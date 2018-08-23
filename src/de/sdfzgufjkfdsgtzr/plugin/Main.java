@@ -96,6 +96,7 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.home.teleport-message", "Du bist nun Zuhause");
         this.getLanguageFile().addDefault("de.home.teleport-usage", "Bitte /home <set> nutzen");
         this.getLanguageFile().addDefault("de.home.set", "Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
+        this.getLanguageFile().addDefault("de.home.not-set", "Du hast noch kein Zuhause!");
         this.getLanguageFile().addDefault("de.service.deactivated", "%s hat den Wartungsmodus deaktiviert");
         this.getLanguageFile().addDefault("de.service.activated", "%s hat den Wartungsmodus aktiviert");
         this.getLanguageFile().addDefault("de.service.ping", "Der Server ist gerade im Wartungsmodus");

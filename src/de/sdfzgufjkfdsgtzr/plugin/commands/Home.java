@@ -37,6 +37,7 @@ public class Home implements CommandExecutor {
                         return true;
                     }
                     else{
+                        sender.sendMessage(ChatColor.DARK_RED + lang.getString(plugin.lang + ".home.not-set"));
                         return false;
                     }
                 } else if (args.length == 1) {
