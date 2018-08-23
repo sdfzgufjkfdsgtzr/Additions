@@ -31,7 +31,7 @@ public class Home implements CommandExecutor {
                 if (args.length == 0) {
                     int coords[] = getHome(player);
                     if (coords != null) {
-                        Location home = new Location(Bukkit.getWorld(homes.getString("users." + player.getUniqueId().toString() + ".world")), coords[0], coords[1], coords[2]);
+                        Location home = new Location(Bukkit.getWorld(homes.getString("users." + player.getName() + ".world")), coords[0], coords[1], coords[2]);
                         player.teleport(home);
                         player.sendMessage(ChatColor.GRAY + lang.getString(plugin.lang + ".home.teleport-message"));
                         return true;
