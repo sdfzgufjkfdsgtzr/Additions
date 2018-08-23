@@ -11,14 +11,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
-import java.io.File;
-import java.util.UUID;
-
 public class Home implements CommandExecutor {
 
     private Main plugin;
     private FileConfiguration lang;
-    private File file;
     private FileConfiguration homes;
 
     public Home(Main plugin){
@@ -31,13 +27,13 @@ public class Home implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
             if (sender.hasPermission("add.player.home")) {
-                Player p = (Player) sender;
+                Player player = (Player) sender;
                 if (args.length == 0) {
-                    int coords[] = getHome(p.getUniqueId());
+                    int coords[] = getHome(player);
                     if (coords != null) {
-                        Location home = new Location(Bukkit.getWorld(homes.getString("users." + p.getUniqueId().toString() + ".world")), coords[0], coords[1], coords[2]);
-                        p.teleport(home);
-                        p.sendMessage(ChatColor.GRAY + lang.getString(plugin.lang + ".home.teleport-message"));
+                        Location home = new Location(Bukkit.getWorld(homes.getString("users." + player.getUniqueId().toString() + ".world")), coords[0], coords[1], coords[2]);
+                        player.teleport(home);
+                        player.sendMessage(ChatColor.GRAY + lang.getString(plugin.lang + ".home.teleport-message"));
                         return true;
                     }
                     else{
@@ -45,12 +41,12 @@ public class Home implements CommandExecutor {
                     }
                 } else if (args.length == 1) {
                     if (args[0].equals("set")) {
-                        int x = p.getLocation().getBlockX();
-                        int y = p.getLocation().getBlockY();
-                        int z = p.getLocation().getBlockZ();
-                        setHome(p.getUniqueId(), p.getWorld(), x, y, z);
-                        String message = String.format(lang.getString(plugin.lang + ".home.set"), x, y, z, p.getWorld().getName());
-                        p.sendMessage(ChatColor.GRAY + message);
+                        int x = player.getLocation().getBlockX();
+                        int y = player.getLocation().getBlockY();
+                        int z = player.getLocation().getBlockZ();
+                        setHome(player, player.getWorld(), x, y, z);
+                        String message = String.format(lang.getString(plugin.lang + ".home.set"), x, y, z, player.getWorld().getName());
+                        player.sendMessage(ChatColor.GRAY + message);
                         return true;
                     }
                 } else {
@@ -69,20 +65,20 @@ public class Home implements CommandExecutor {
     }
 
 
-    private void setHome(UUID uuid, World world, int x, int y, int z){
-        homes.set("users." + uuid.toString() + ".x", x);
-        homes.set("users." + uuid.toString() + ".y", y);
-        homes.set("users." + uuid.toString() + ".z", z);
-        homes.set("users." + uuid.toString() + ".world", world.getName());
+    private void setHome(Player player, World world, int x, int y, int z) {
+        homes.set("users." + player.getName() + ".x", x);
+        homes.set("users." + player.getName() + ".y", y);
+        homes.set("users." + player.getName() + ".z", z);
+        homes.set("users." + player.getName() + ".world", world.getName());
         plugin.saveConfigFile(homes, plugin.home_file);
     }
 
 
-    private int[] getHome(UUID uuid){
+    private int[] getHome(Player player) {
         int[] coords = new int[3];
-        coords[0] = homes.getInt("users." + uuid.toString() + ".x");
-        coords[1] = homes.getInt("users." + uuid.toString() + ".y");
-        coords[2] = homes.getInt("users." + uuid.toString() + ".z");
+        coords[0] = homes.getInt("users." + player.getName() + ".x");
+        coords[1] = homes.getInt("users." + player.getName() + ".y");
+        coords[2] = homes.getInt("users." + player.getName() + ".z");
         return coords;
     }
 }
