@@ -38,7 +38,7 @@ public class Home implements CommandExecutor {
                     }
                     else{
                         sender.sendMessage(ChatColor.DARK_RED + lang.getString(plugin.lang + ".home.not-set"));
-                        return false;
+                        return true;
                     }
                 } else if (args.length == 1) {
                     if (args[0].equals("set")) {
@@ -77,9 +77,17 @@ public class Home implements CommandExecutor {
 
     private int[] getHome(Player player) {
         int[] coords = new int[3];
-        coords[0] = homes.getInt("users." + player.getName() + ".x");
-        coords[1] = homes.getInt("users." + player.getName() + ".y");
-        coords[2] = homes.getInt("users." + player.getName() + ".z");
-        return coords;
+
+        if (hasHome(player)) {
+            coords[0] = homes.getInt("users." + player.getName() + ".x");
+            coords[1] = homes.getInt("users." + player.getName() + ".y");
+            coords[2] = homes.getInt("users." + player.getName() + ".z");
+            return coords;
+        }
+        return null;
+    }
+
+    private boolean hasHome(Player player) {
+        return (homes.isSet("users." + player.getName() + ".x") && homes.isSet("users." + player.getName() + ".y") && homes.isSet("users." + player.getName() + ".z"));
     }
 }
