@@ -78,6 +78,7 @@ When you do it by yourself: copy the structure provides for German translations 
 - [ ] Expand Home's functionality
   - [ ] Multiple homes
   - [ ] Delete homes
+  - [X] optimize config file
 - [ ] make Sleep event configurable
 - [ ] Add permissions system
 - [ ] Add Economy system
