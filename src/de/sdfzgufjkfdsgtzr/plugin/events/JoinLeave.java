@@ -25,10 +25,10 @@ public class JoinLeave implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        if(!plugin.cfg.contains(e.getPlayer().getUniqueId().toString())){
-            plugin.cfg.set("user." + e.getPlayer().getUniqueId().toString() + ".prefix_color", plugin.cfg.getString("startup.prefix_color"));
-            plugin.cfg.set("user." + e.getPlayer().getUniqueId().toString() + ".chat_color", plugin.cfg.getString("startup.chat_color"));
-            plugin.cfg.set("user." + e.getPlayer().getUniqueId().toString() + ".notify", false);
+        if (!plugin.cfg.contains(e.getPlayer().getName())) {
+            plugin.cfg.set("user." + e.getPlayer().getName() + ".prefix_color", plugin.cfg.getString("startup.prefix_color"));
+            plugin.cfg.set("user." + e.getPlayer().getName() + ".chat_color", plugin.cfg.getString("startup.chat_color"));
+            plugin.cfg.set("user." + e.getPlayer().getName() + ".notify", false);
             plugin.saveConfig(); }
 
         String player = e.getPlayer().getName();
