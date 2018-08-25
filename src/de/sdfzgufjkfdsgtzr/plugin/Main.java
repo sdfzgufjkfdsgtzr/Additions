@@ -36,6 +36,7 @@ public class Main extends JavaPlugin {
         cfg = getConfig();
         addGermanLanguageDefaults();
         addEnglishLanguageDefaults();
+        this.cfg.addDefault("startup.language", "en");
         loadConfig();
         this.lang = cfg.getString("startup.language");
 
@@ -49,6 +50,7 @@ public class Main extends JavaPlugin {
         this.getCommand("color").setExecutor(new SetChatColor(this));
         this.getCommand("home").setExecutor(new Home(this));
         this.getCommand("sethome").setExecutor(new Home(this));
+        this.getCommand("delhome").setExecutor(new Home(this));
         this.getCommand("service").setExecutor(new Maintenance(this));
         this.getCommand("balance").setExecutor(new Economy(this));
         this.getCommand("pay").setExecutor(new Economy(this));
@@ -97,11 +99,12 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.ChunkNotifier.enter-chunk", "Du befindest dich nun in einem Slimechunk");
         this.getLanguageFile().addDefault("de.ChunkNotifier.leave-chunk", "Du befindest dich nun nicht mehr in einem Slimechunk");
 
-        this.getLanguageFile().addDefault("de.home.teleport-message", "Du bist nun Zuhause");
-        this.getLanguageFile().addDefault("de.home.teleport-usage", "Bitte /home <home> nutzen");
-        this.getLanguageFile().addDefault("de.home.teleport-usage-set", "Bitte /sethome <home> nutzen");
-        this.getLanguageFile().addDefault("de.home.set", "Dein Zuhause: \"%s\" wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
-        this.getLanguageFile().addDefault("de.home.set-default", "Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
+        this.getLanguageFile().addDefault("de.home.message", "Du bist nun Zuhause");
+        this.getLanguageFile().addDefault("de.home.usage", "Bitte /home <home> nutzen");
+        this.getLanguageFile().addDefault("de.home.set", "Dein Zuhause: \"%s\" wurde bei X: %d Y: %d Z: %d in der Welt: \"%s\" gesetzt");
+        this.getLanguageFile().addDefault("de.home.set-default", "Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: \"%s\" gesetzt");
+        this.getLanguageFile().addDefault("de.home.del", "Dein Zuhause: \"%s\" bei X: %d Y: %d Z: %d in der Welt: \"%s\" wurde gelöscht");
+        this.getLanguageFile().addDefault("de.home.del-default", "Dein Zuhause bei X: %d Y: %d Z: %d in der Welt: \"%s\" wurde gelöscht");
         this.getLanguageFile().addDefault("de.home.not-set", "Du hast noch kein Zuhause!");
         this.getLanguageFile().addDefault("de.home.not-set-multiple", "Du hast noch kein Zuhause mit diesem Namen!");
         this.getLanguageFile().addDefault("de.home.perm-multiple-missing", "Du darfst nicht mehrere Homes haben!");
@@ -120,8 +123,6 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.event.leave", "&7%s ist jetzt &coffline");
         this.getLanguageFile().addDefault("de.event.sleep", "Die Sonne geht langsam auf...");
         this.getLanguageFile().addDefault("de.event.no-sleep", "Es schlafen nur %d von %d nötigen Spielern!");
-
-        this.cfg.addDefault("startup.language", "de");
     }
 
     private void addEnglishLanguageDefaults() {
@@ -133,11 +134,13 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("en.ChunkNotifier.enter-chunk", "You just entered a slime chunk");
         this.getLanguageFile().addDefault("en.ChunkNotifier.leave-chunk", "You aren't in a slime chunk anymore");
 
-        this.getLanguageFile().addDefault("en.home.teleport-message", "You are now at home");
-        this.getLanguageFile().addDefault("en.home.teleport-usage", "Please use /home <home>");
-        this.getLanguageFile().addDefault("en.home.teleport-usage-set", "Please use /sethome <home>");
-        this.getLanguageFile().addDefault("en.home.set", "Your home: \"%s\" was set at X: %d Y: %d Z: %d in world: %s");
-        this.getLanguageFile().addDefault("en.home.set-default", "Your home was set at X: %d Y: %d Z: %d in world: %s");
+        this.getLanguageFile().addDefault("en.home.message", "You are now at home");
+        this.getLanguageFile().addDefault("en.home.usage", "Please use /home <home>");
+        this.getLanguageFile().addDefault("en.home.usage-set", "Please use /sethome <home>");
+        this.getLanguageFile().addDefault("en.home.set", "Your home: \"%s\" was set at X: %d Y: %d Z: %d in world: \"%s\"");
+        this.getLanguageFile().addDefault("en.home.set-default", "Your home was set at X: %d Y: %d Z: %d in world: \"%s\"");
+        this.getLanguageFile().addDefault("en.home.del", "Your home: \"%s\" at X: %d Y: %d Z: %d in world: \"%s\" was deleted");
+        this.getLanguageFile().addDefault("en.home.del-default", "Your home at X: %d Y: %d Z: %d in world: \"%s\" was deleted");
         this.getLanguageFile().addDefault("en.home.not-set", "You do not have a default home yet!");
         this.getLanguageFile().addDefault("en.home.not-set-multiple", "You do not have a home with this name yet!");
         this.getLanguageFile().addDefault("en.home.perm-multiple-missing", "You are not allowed to have multiple homes!");
@@ -156,7 +159,5 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("en.event.leave", "&7%s is now &coffline");
         this.getLanguageFile().addDefault("en.event.sleep", "The sun is rising slowly..");
         this.getLanguageFile().addDefault("en.event.no-sleep", "There are only %d out of %d needed players sleeping!");
-
-        this.cfg.addDefault("startup.language", "en");
     }
 }

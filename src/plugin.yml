@@ -1,5 +1,5 @@
 name: Additions
-version: 0.4.5
+version: 0.4.6
 author: sdfzgufjkfdsgtzr
 main: de.sdfzgufjkfdsgtzr.plugin.Main
 api-version: 1.13
@@ -10,6 +10,9 @@ commands:
   sethome:
     description: sets the player's home
     usage: /sethome <home>
+  delhome:
+    description: deletes the player's home
+    usage: /delhome <home>
   service:
     description: provides access to the server's status
     usage: /service [on/off]
