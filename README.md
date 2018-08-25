@@ -25,7 +25,7 @@ __Notes__: The default value is ```false``` and will be set everytime the player
 #### _ChatAppearance_
 __Usage__: ```/color <format_code> <format_code>```Example: ```/color a a```\
 __Description__: Sets the display name and the chat color to the specified color codes.\
-__Notes__: The first argument specifies the color code for the player's name, the second argument specifies the format code for the text messagees the player will send.\
+__Notes__: The first argument specifies the color code for the player's name, the second argument specifies the format code for the text messages the player will send.\
 When no argument is given, the command will restore the default values specified in the ```config.yml```. The player's name is specified by the format code set at ```startup.prefix_color```, the messages format is specified by the format code set at ```startup.chat_color```.
 
 ## Events
