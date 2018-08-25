@@ -26,11 +26,11 @@ public class ChunkNotifier implements CommandExecutor {
             Player p = (Player) sender;
             if (p.hasPermission("add.player.chunkNotifier")) {
                 if(plugin.cfg.getBoolean("user." + p.getUniqueId().toString() + ".notify")){
-                    plugin.cfg.set("user." + p.getUniqueId().toString() + ".notify", false);
+                    plugin.cfg.set("user." + p.getName() + ".notify", false);
                     p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChunkNotifier.No-Notify"));
                     plugin.saveConfig();
                 }else{
-                    plugin.cfg.set("user." + p.getUniqueId().toString() + ".notify", true);
+                    plugin.cfg.set("user." + p.getName() + ".notify", true);
                     p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChunkNotifier.Notify"));
                     plugin.saveConfig();
                 }
