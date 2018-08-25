@@ -30,3 +30,35 @@ de:
     leave: '&7%s ist jetzt &coffline'
     sleep: Die Sonne geht langsam auf...
     no-sleep: Es schlafen nur %d von %d nötigen Spielern!
+en:
+  permission-missing: You are not allowed to do this
+  permission-join-missing: You are not allowed to enter the server
+  ChunkNotifier:
+    Notify: You will now receive notfications about slime chunks
+    No-Notify: You won't receive notifications about slime chunks anymore
+    enter-chunk: You just entered a slime chunk
+    leave-chunk: You aren't in a slime chunk anymore
+  home:
+    teleport-message: You are now at home
+    teleport-usage: Please use /home <home>
+    teleport-usage-set: Please use /sethome <home>
+    set: 'Your home: "%s" was set at X: %d Y: %d Z: %d in world: %s'
+    set-default: 'Your home was set at X: %d Y: %d Z: %d in world: %s'
+    not-set: You do not have a default home yet!
+    not-set-multiple: You do not have a home with this name yet!
+    perm-multiple-missing: You are not allowed to have multiple homes!
+  service:
+    deactivated: '%s deactivated the service mode'
+    activated: '%s activated the service mode'
+    ping: The server is in service mode at the moment
+    value: 'Service mode: %b'
+  ChatColor:
+    default: The chat format defaults were restored
+    prefixColor: 'Your new name format: %s%s'
+    chatColor: 'Your new message format: %s%s'
+    misusage: You are only allowed to use %s or %s!
+  event:
+    join: '&7%s is now &aonline'
+    leave: '&7%s is now &coffline'
+    sleep: The sun is rising slowly..
+    no-sleep: There are only %d out of %d needed players sleeping!
