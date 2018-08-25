@@ -1,4 +1,4 @@
-# Additions 0.4
+# Additions 0.4.5
 
 ## Commands
 #### _Maintenance_
@@ -76,9 +76,10 @@ If you want to do it by yourself: copy the structure provided for German transla
 
 ### Current available translations
 * German
-
-### Translations that will be added
 * English
+
+### Translations to be added
+* If you want your language to be added, let me know about it
 
 
 ## Todo
