@@ -34,7 +34,8 @@ public class Main extends JavaPlugin {
     public void onEnable(){
         PluginManager pm;
         cfg = getConfig();
-        addLanguageDefaults();
+        addGermanLanguageDefaults();
+        addEnglishLanguageDefaults();
         loadConfig();
         this.lang = cfg.getString("startup.language");
 
@@ -87,7 +88,7 @@ public class Main extends JavaPlugin {
         }
     }
 
-    private void addLanguageDefaults(){
+    private void addGermanLanguageDefaults() {
         this.getLanguageFile().addDefault("de.permission-missing", "Du hast keine Berechtigung das zu tun");
         this.getLanguageFile().addDefault("de.permission-join-missing", "Du hast keine Berechtigung den Server zu betreten");
 
@@ -121,5 +122,41 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.event.no-sleep", "Es schlafen nur %d von %d nötigen Spielern!");
 
         this.cfg.addDefault("startup.language", "de");
+    }
+
+    private void addEnglishLanguageDefaults() {
+        this.getLanguageFile().addDefault("en.permission-missing", "You are not allowed to do this");
+        this.getLanguageFile().addDefault("en.permission-join-missing", "You are not allowed to enter the server");
+
+        this.getLanguageFile().addDefault("en.ChunkNotifier.Notify", "You will now receive notfications about slime chunks");
+        this.getLanguageFile().addDefault("en.ChunkNotifier.No-Notify", "You won't receive notifications about slime chunks anymore");
+        this.getLanguageFile().addDefault("en.ChunkNotifier.enter-chunk", "You just entered a slime chunk");
+        this.getLanguageFile().addDefault("en.ChunkNotifier.leave-chunk", "You aren't in a slime chunk anymore");
+
+        this.getLanguageFile().addDefault("en.home.teleport-message", "You are now at home");
+        this.getLanguageFile().addDefault("en.home.teleport-usage", "Please use /home <home>");
+        this.getLanguageFile().addDefault("en.home.teleport-usage-set", "Please use /sethome <home>");
+        this.getLanguageFile().addDefault("en.home.set", "Your home: \"%s\" was set at X: %d Y: %d Z: %d in world: %s");
+        this.getLanguageFile().addDefault("en.home.set-default", "Your home was set at X: %d Y: %d Z: %d in world: %s");
+        this.getLanguageFile().addDefault("en.home.not-set", "You do not have a default home yet!");
+        this.getLanguageFile().addDefault("en.home.not-set-multiple", "You do not have a home with this name yet!");
+        this.getLanguageFile().addDefault("en.home.perm-multiple-missing", "You are not allowed to have multiple homes!");
+
+        this.getLanguageFile().addDefault("en.service.deactivated", "%s deactivated the service mode");
+        this.getLanguageFile().addDefault("en.service.activated", "%s activated the service mode");
+        this.getLanguageFile().addDefault("en.service.ping", "The server is in service mode at the moment");
+        this.getLanguageFile().addDefault("en.service.value", "Service mode: %b");
+
+        this.getLanguageFile().addDefault("en.ChatColor.default", "The chat format defaults were restored");
+        this.getLanguageFile().addDefault("en.ChatColor.prefixColor", "Your new name format: %s%s");
+        this.getLanguageFile().addDefault("en.ChatColor.chatColor", "Your new message format: %s%s");
+        this.getLanguageFile().addDefault("en.ChatColor.misusage", "You are only allowed to use %s or %s!");
+
+        this.getLanguageFile().addDefault("en.event.join", "&7%s is now &aonline");
+        this.getLanguageFile().addDefault("en.event.leave", "&7%s is now &coffline");
+        this.getLanguageFile().addDefault("en.event.sleep", "The sun is rising slowly..");
+        this.getLanguageFile().addDefault("en.event.no-sleep", "There are only %d out of %d needed players sleeping!");
+
+        this.cfg.addDefault("startup.language", "en");
     }
 }
