@@ -47,6 +47,7 @@ public class Main extends JavaPlugin {
 
         this.getCommand("color").setExecutor(new SetChatColor(this));
         this.getCommand("home").setExecutor(new Home(this));
+        this.getCommand("sethome").setExecutor(new Home(this));
         this.getCommand("service").setExecutor(new Maintenance(this));
         this.getCommand("balance").setExecutor(new Economy(this));
         this.getCommand("pay").setExecutor(new Economy(this));

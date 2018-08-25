@@ -17,7 +17,7 @@ public class Home implements CommandExecutor {
     private FileConfiguration lang;
     private FileConfiguration homes;
 
-    public Home(Main plugin){
+    public Home(Main plugin) {
         this.plugin = plugin;
         this.lang = plugin.getLanguageFile();
         this.homes = plugin.getHomeFile();
@@ -26,39 +26,75 @@ public class Home implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
-            if (sender.hasPermission("add.player.home")) {
-                Player player = (Player) sender;
-                if (args.length == 0) {
-                    int coords[] = getHome(player);
-                    if (coords != null) {
-                        Location home = new Location(Bukkit.getWorld(homes.getString("users." + player.getName() + ".world")), coords[0], coords[1], coords[2]);
-                        player.teleport(home);
-                        player.sendMessage(ChatColor.GRAY + lang.getString(plugin.lang + ".home.teleport-message"));
-                        return true;
-                    }
-                    else{
-                        sender.sendMessage(ChatColor.DARK_RED + lang.getString(plugin.lang + ".home.not-set"));
-                        return true;
-                    }
-                } else if (args.length == 1) {
-                    if (args[0].equals("set")) {
-                        int x = player.getLocation().getBlockX();
-                        int y = player.getLocation().getBlockY();
-                        int z = player.getLocation().getBlockZ();
-                        setHome(player, player.getWorld(), x, y, z);
-                        String message = String.format(lang.getString(plugin.lang + ".home.set"), x, y, z, player.getWorld().getName());
-                        player.sendMessage(ChatColor.GRAY + message);
+            if (label.equalsIgnoreCase("home")) {
+                if (sender.hasPermission("add.player.home.teleport")) {
+                    Player player = (Player) sender;
+                    if (args.length == 0) {
+                        int coords[] = getDefaultHome(player);
+                        if (coords != null) {
+                            Location home = new Location(Bukkit.getWorld(homes.getString("users." + player.getName() + ".default.world")), coords[0], coords[1], coords[2]);
+                            player.teleport(home);
+                            player.sendMessage(ChatColor.GRAY + lang.getString(plugin.lang + ".home.teleport-message"));
+                            return true;
+                        } else {
+                            sender.sendMessage(ChatColor.DARK_RED + lang.getString(plugin.lang + ".home.not-set"));
+                            return true;
+                        }
+                    } else if (args.length == 1) {
+                        int coords[] = getHome(player, args[0]);
+                        if (coords != null) {
+                            Location home = new Location(Bukkit.getWorld(homes.getString("users." + player.getName() + "." + args[0] + ".world")), coords[0], coords[1], coords[2]);
+                            player.teleport(home);
+                            player.sendMessage(ChatColor.GRAY + lang.getString(plugin.lang + ".home.teleport-message"));
+                            return true;
+                        } else {
+                            sender.sendMessage(ChatColor.DARK_RED + lang.getString(plugin.lang + ".home.not-set"));
+                            return true;
+                        }
+                    } else {
+                        sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".teleport-usage"));
                         return true;
                     }
                 } else {
-                    sender.sendMessage(ChatColor.DARK_RED + lang.getString(plugin.lang + ".home.teleport-usage"));
+                    sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".permission-missing"));
                     return true;
                 }
-            } else{
-                sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".permission-missing"));
-                return true;
             }
-        }else {
+
+            if (label.equalsIgnoreCase("sethome")) {
+                if (sender.hasPermission("add.player.home.set")) {
+                    Player player = (Player) sender;
+                    if (args.length == 0) {
+                        int x = player.getLocation().getBlockX();
+                        int y = player.getLocation().getBlockY();
+                        int z = player.getLocation().getBlockZ();
+                        setDefaultHome(player, player.getWorld(), x, y, z);
+                        String message = String.format(lang.getString(plugin.lang + ".home.set.default"), x, y, z, player.getWorld().getName());
+                        player.sendMessage(ChatColor.GRAY + message);
+                        return true;
+                    } else if (args.length == 1) {
+                        if (player.hasPermission("add.player.home.set.multiple")) {
+                            int x = player.getLocation().getBlockX();
+                            int y = player.getLocation().getBlockY();
+                            int z = player.getLocation().getBlockZ();
+                            setHome(player, player.getWorld(), x, y, z, args[0]);
+                            String message = String.format(lang.getString(plugin.lang + ".home.set"), args[0], x, y, z, player.getWorld().getName());
+                            player.sendMessage(ChatColor.GRAY + message);
+                            return true;
+                        } else {
+                            sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".home.permission-multiple-missing"));
+                            return true;
+                        }
+                    } else {
+                        sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".teleport-usage"));
+                        return true;
+                    }
+                } else {
+                    sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".permission-missing"));
+                    return true;
+                }
+            }
+        } else {
             Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " The Console cannot set it's home!");
             return true;
         }
@@ -66,19 +102,27 @@ public class Home implements CommandExecutor {
     }
 
 
-    private void setHome(Player player, World world, int x, int y, int z) {
-        homes.set("users." + player.getName() + ".x", x);
-        homes.set("users." + player.getName() + ".y", y);
-        homes.set("users." + player.getName() + ".z", z);
-        homes.set("users." + player.getName() + ".world", world.getName());
+    private void setHome(Player player, World world, int x, int y, int z, String home) {
+        homes.set("users." + player.getName() + "." + home + ".x", x);
+        homes.set("users." + player.getName() + "." + home + ".y", y);
+        homes.set("users." + player.getName() + "." + home + ".z", z);
+        homes.set("users." + player.getName() + "." + home + ".world", world.getName());
+        plugin.saveConfigFile(homes, plugin.home_file);
+    }
+
+    private void setDefaultHome(Player player, World world, int x, int y, int z) {
+        homes.set("users." + player.getName() + ".default.x", x);
+        homes.set("users." + player.getName() + ".default.y", y);
+        homes.set("users." + player.getName() + ".default.z", z);
+        homes.set("users." + player.getName() + ".default.world", world.getName());
         plugin.saveConfigFile(homes, plugin.home_file);
     }
 
 
-    private int[] getHome(Player player) {
+    private int[] getHome(Player player, String home) {
         int[] coords = new int[3];
 
-        if (hasHome(player)) {
+        if (hasHome(player, home)) {
             coords[0] = homes.getInt("users." + player.getName() + ".x");
             coords[1] = homes.getInt("users." + player.getName() + ".y");
             coords[2] = homes.getInt("users." + player.getName() + ".z");
@@ -87,7 +131,19 @@ public class Home implements CommandExecutor {
         return null;
     }
 
-    private boolean hasHome(Player player) {
-        return (homes.isSet("users." + player.getName() + ".x") && homes.isSet("users." + player.getName() + ".y") && homes.isSet("users." + player.getName() + ".z"));
+    private int[] getDefaultHome(Player player) {
+        int[] coords = new int[3];
+
+        if (homes.isSet("users." + player.getName() + ".default")) {
+            coords[0] = homes.getInt("users." + player.getName() + ".default.x");
+            coords[1] = homes.getInt("users." + player.getName() + ".default.y");
+            coords[2] = homes.getInt("users." + player.getName() + ".default.z");
+            return coords;
+        }
+        return null;
+    }
+
+    private boolean hasHome(Player player, String home) {
+        return (homes.isSet("users." + player.getName() + "." + home + ".x") && homes.isSet("users." + player.getName() + "." + home + ".y") && homes.isSet("users." + player.getName() + "." + home + ".z"));
     }
 }
