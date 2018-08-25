@@ -26,15 +26,15 @@ public class SetChatColor implements CommandExecutor {
                 Player p = (Player) sender;
                 String allowed = "[a-f[k-o]0-9]";
                 if(args.length == 0){
-                    plugin.cfg.set("user." + p.getUniqueId().toString() + ".prefix_color", plugin.cfg.getString("startup.prefix_color"));
-                    plugin.cfg.set("user." + p.getUniqueId().toString() + ".chat_color", plugin.cfg.getString("startup.chat_color"));
-                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.default") +  ":\n§" + plugin.cfg.getString("user." + p.getUniqueId().toString() + ".prefix_color") + "[Name] §" + plugin.cfg.getString("user." + p.getUniqueId().toString() + ".chat_color") + "[Chat]");
+                    plugin.cfg.set("user." + p.getName() + ".prefix_color", plugin.cfg.getString("startup.prefix_color"));
+                    plugin.cfg.set("user." + p.getName() + ".chat_color", plugin.cfg.getString("startup.chat_color"));
+                    p.sendMessage(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.default") + ":\n§" + plugin.cfg.getString("user." + p.getName() + ".prefix_color") + "[Name] §" + plugin.cfg.getString("user." + p.getName() + ".chat_color") + "[Chat]");
                     plugin.saveConfig();
                     return true;
                 }
                 else if(args.length == 1){
                     if(args[0].matches(allowed)){
-                        plugin.cfg.set("user." + p.getUniqueId().toString() + ".prefix_color", args[0].charAt(0));
+                        plugin.cfg.set("user." + p.getName() + ".prefix_color", args[0].charAt(0));
                         String part1 = "§o";
                         String message = String.format(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.prefixColor"), part1, args[0].charAt(0));
                         p.sendMessage(message);
@@ -50,13 +50,13 @@ public class SetChatColor implements CommandExecutor {
                 }
                 else if(args.length == 2) {
                     if (args[0].matches(allowed)) {
-                        plugin.cfg.set("user." + p.getUniqueId().toString() + ".prefix_color", args[0].charAt(0));
+                        plugin.cfg.set("user." + p.getName() + ".prefix_color", args[0].charAt(0));
                         String part1 = "§o";
                         String message = String.format(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.prefixColor"), part1, args[0].charAt(0));
                         p.sendMessage(message);
                     }
                     if (args[1].matches(allowed)) {
-                        plugin.cfg.set("user." + p.getUniqueId().toString() + ".chat_color", args[1].charAt(0));
+                        plugin.cfg.set("user." + p.getName() + ".chat_color", args[1].charAt(0));
                         String part1 = "§o";
                         String message = String.format(ChatColor.GRAY + plugin.PLUGIN_NAME + " " + cfg.getString(plugin.lang + ".ChatColor.chatColor"), part1, args[1].charAt(0));
                         p.sendMessage(message);
