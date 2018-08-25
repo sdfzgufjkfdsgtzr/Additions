@@ -65,7 +65,7 @@ __Notes__: The format is fully customizable in the ```languages.yml```
 
 ## Translations
 Feel free to add your own translations to the ```languages.yml``` or just ask me to add them to next version of it\
-When you do it by yourself: copy the structure provides for German translations and replace ```de``` to your country code. Then exchange the country code in the ```config.yml``` and you'll be ready to go.
+If you want to do it by yourself: copy the structure provided for German translations and replace ```de``` to your country code. Then exchange the country code in the ```config.yml``` and you'll be ready to go.
 
 ### Current available translations
 * German
@@ -81,6 +81,7 @@ When you do it by yourself: copy the structure provides for German translations 
   - [X] optimize config file
 - [ ] make Sleep event configurable
 - [ ] Add permissions system
+- [ ] Add ticket systen
 - [ ] Add Economy system
   - [ ] provide API for access by other developers
 - [ ] optimize code
