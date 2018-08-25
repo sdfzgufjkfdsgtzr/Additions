@@ -7,13 +7,14 @@ de:
     enter-chunk: Du befindest dich nun in einem Slimechunk
     leave-chunk: Du befindest dich nun nicht mehr in einem Slimechunk
   home:
-    teleport-message: Du bist nun Zuhause.
+    teleport-message: Du bist nun Zuhause
     teleport-usage: Bitte /home <home> nutzen
     teleport-usage-set: Bitte /sethome <home> nutzen
     set: 'Dein Zuhause: %s wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt'
-    set-default: 'Dein Zuhause: wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt'
+    set-default: 'Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt'
     not-set: Du hast noch kein Zuhause!
-    perm-multiple-missing: Du darfst nicht mehrere Homes setzen!
+    not-set-multiple: Du hast noch kein Zuhause mit diesem Namen!
+    perm-multiple-missing: Du darfst nicht mehrere Homes haben!
   service:
     deactivated: '%s hat den Wartungsmodus deaktiviert'
     activated: '%s hat den Wartungsmodus aktiviert'

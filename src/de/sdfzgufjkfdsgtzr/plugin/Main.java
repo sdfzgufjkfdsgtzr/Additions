@@ -102,7 +102,8 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.home.set", "Dein Zuhause: %s wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
         this.getLanguageFile().addDefault("de.home.set-default", "Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
         this.getLanguageFile().addDefault("de.home.not-set", "Du hast noch kein Zuhause!");
-        this.getLanguageFile().addDefault("de.home.perm-multiple-missing", "Du hast noch kein Zuhause!");
+        this.getLanguageFile().addDefault("de.home.not-set-multiple", "Du hast noch kein Zuhause mit diesem Namen!");
+        this.getLanguageFile().addDefault("de.home.perm-multiple-missing", "Du darfst nicht mehrere Homes haben!");
 
         this.getLanguageFile().addDefault("de.service.deactivated", "%s hat den Wartungsmodus deaktiviert");
         this.getLanguageFile().addDefault("de.service.activated", "%s hat den Wartungsmodus aktiviert");
