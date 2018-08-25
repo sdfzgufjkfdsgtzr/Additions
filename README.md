@@ -8,9 +8,14 @@ __Notes__: When the Maintenance mode is active the servers slot value will be se
 The Server will stay in maintenance mode as long as the value of ```startup.maintenance``` is ```true``` in the ```config.yml```. 
 
 #### _Home_
-__Usage__: ```/home <set>```\
+__Usage__: ```/home <home>```\
 __Description__: Teleports the player to his home location when it was set before\
-__Notes__: The home location is editable in the plugin folder ```homes.yml``` once they are set
+__Notes__: If no argument is given, it will use the default home once it is set
+
+#### _Sethome_
+__Usage__: ```/sethome <home>```\
+__Description__: Set the player's home. If an argument is given, it'll become the home's name\
+__Notes__: The home location is editable in the plugin folder ```homes.yml``` once it is set
 
 #### _SlimeNotifier_
 __Usage__: ```/slimecheck```\
@@ -34,13 +39,13 @@ __Shoots when__: A player is sending a message to chat\
 __Description__: It is a custom chat format\
 __Format__: ```{PREFIX_COLOR}{Playername}:{CHAT_COLOR}{Message}```
 
-#### _JoinTheServer_
+#### _ServerJoin_
 __Shoots when__: A player is joining the server\
 __Description__: It is a custom join message\
 __Format__: ```{Playername} is now {LIGHT_GREEN}online```\
 __Notes__: The format is fully customizable in the ```languages.yml``` 
 
-#### _LeaveTheServer_
+#### _ServerLeave_
 __Shoots when__: A player is leaving the server\
 __Description__: It is a custom join message\
 __Format__: ```{Playername} is now {LIGHT_RED}offline```\
@@ -54,7 +59,9 @@ __Notes__: The format is fully customizable in the ```languages.yml```
 
 #### **Everything according to the player**
 ##### _Home_
-* add.player.home
+* add.player.home.teleport
+* add.player.home.set
+* add.player.home.set.multiple
 ##### _SlimeNotifier_
 * add.player.chunkNotifier
 ##### _ChatAppearance_
@@ -76,9 +83,10 @@ If you want to do it by yourself: copy the structure provided for German transla
 
 ## Todo
 - [ ] Expand Home's functionality
-  - [ ] Multiple homes
+  - [X] Multiple homes
   - [ ] Delete homes
   - [X] optimize config file
+  - [ ] add Home limitations
 - [ ] make Sleep event configurable
 - [ ] Add permissions system
 - [ ] Add ticket systen
