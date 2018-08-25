@@ -85,9 +85,10 @@ If you want to do it by yourself: copy the structure provided for German transla
 ## Todo
 - [ ] Expand Home's functionality
   - [X] Multiple homes
-  - [ ] Delete homes
+  - [X] Delete homes
   - [X] optimize config file
   - [ ] add Home limitations
+  - [ ] add Logger for changes
 - [ ] make Sleep event configurable
 - [ ] Add permissions system
 - [ ] Add ticket systen
