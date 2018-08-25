@@ -90,26 +90,35 @@ public class Main extends JavaPlugin {
     private void addLanguageDefaults(){
         this.getLanguageFile().addDefault("de.permission-missing", "Du hast keine Berechtigung das zu tun");
         this.getLanguageFile().addDefault("de.permission-join-missing", "Du hast keine Berechtigung den Server zu betreten");
+
         this.getLanguageFile().addDefault("de.ChunkNotifier.Notify", "Du erhälst ab sofort Benachrichtigungen über Slimechunks");
         this.getLanguageFile().addDefault("de.ChunkNotifier.No-Notify", "Du erhälst ab sofort keine Benachrichtigungen über Slimechunks mehr");
         this.getLanguageFile().addDefault("de.ChunkNotifier.enter-chunk", "Du befindest dich nun in einem Slimechunk");
         this.getLanguageFile().addDefault("de.ChunkNotifier.leave-chunk", "Du befindest dich nun nicht mehr in einem Slimechunk");
+
         this.getLanguageFile().addDefault("de.home.teleport-message", "Du bist nun Zuhause");
-        this.getLanguageFile().addDefault("de.home.teleport-usage", "Bitte /home <set> nutzen");
-        this.getLanguageFile().addDefault("de.home.set", "Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
+        this.getLanguageFile().addDefault("de.home.teleport-usage", "Bitte /home <home> nutzen");
+        this.getLanguageFile().addDefault("de.home.teleport-usage-set", "Bitte /sethome <home> nutzen");
+        this.getLanguageFile().addDefault("de.home.set", "Dein Zuhause: %s wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
+        this.getLanguageFile().addDefault("de.home.set-default", "Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
         this.getLanguageFile().addDefault("de.home.not-set", "Du hast noch kein Zuhause!");
+        this.getLanguageFile().addDefault("de.home.perm-multiple-missing", "Du hast noch kein Zuhause!");
+
         this.getLanguageFile().addDefault("de.service.deactivated", "%s hat den Wartungsmodus deaktiviert");
         this.getLanguageFile().addDefault("de.service.activated", "%s hat den Wartungsmodus aktiviert");
         this.getLanguageFile().addDefault("de.service.ping", "Der Server ist gerade im Wartungsmodus");
         this.getLanguageFile().addDefault("de.service.value", "Der Wartungsmodus steht auf: %b");
+
         this.getLanguageFile().addDefault("de.ChatColor.default", "Deine Chat-Farben wurden auf den Standard zurückgesetzt");
         this.getLanguageFile().addDefault("de.ChatColor.prefixColor", "Die neue Farbe deines Namens ist: %s%s");
         this.getLanguageFile().addDefault("de.ChatColor.chatColor", "Die neue Farbe deiner Nachricht ist: %s%s");
         this.getLanguageFile().addDefault("de.ChatColor.misusage", "Du darfst nur %s oder %s nutzen!");
+
         this.getLanguageFile().addDefault("de.event.join", "&7%s ist jetzt &aonline");
         this.getLanguageFile().addDefault("de.event.leave", "&7%s ist jetzt &coffline");
         this.getLanguageFile().addDefault("de.event.sleep", "Die Sonne geht langsam auf...");
         this.getLanguageFile().addDefault("de.event.no-sleep", "Es schlafen nur %d von %d nötigen Spielern!");
+
         this.cfg.addDefault("startup.language", "de");
     }
 }

@@ -82,11 +82,11 @@ public class Home implements CommandExecutor {
                             player.sendMessage(ChatColor.GRAY + message);
                             return true;
                         } else {
-                            sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".home.permission-multiple-missing"));
+                            sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".home.perm-multiple-missing"));
                             return true;
                         }
                     } else {
-                        sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".teleport-usage"));
+                        sender.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".teleport-usage-set"));
                         return true;
                     }
                 } else {

@@ -9,10 +9,11 @@ de:
   home:
     teleport-message: Du bist nun Zuhause.
     teleport-usage: Bitte /home <home> nutzen
+    teleport-usage-set: Bitte /sethome <home> nutzen
     set: 'Dein Zuhause: %s wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt'
     set-default: 'Dein Zuhause: wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt'
     not-set: Du hast noch kein Zuhause!
-    permission-multiple-missing: Du darfst nicht mehrere Homes setzen!
+    perm-multiple-missing: Du darfst nicht mehrere Homes setzen!
   service:
     deactivated: '%s hat den Wartungsmodus deaktiviert'
     activated: '%s hat den Wartungsmodus aktiviert'

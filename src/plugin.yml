@@ -6,7 +6,10 @@ api-version: 1.13
 commands:
   home:
     description: teleports the player to his home
-    usage: /home to teleport or /home set to set a new home
+    usage: /home <home>
+  sethome:
+    description: sets the player's home
+    usage: /sethome <home>
   service:
     description: provides access to the server's status
     usage: /service [on/off]
