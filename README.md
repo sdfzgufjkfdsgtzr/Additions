@@ -19,7 +19,7 @@ __Notes__: The home location is editable in the plugin folder ```homes.yml``` on
 
 #### _Delhome_
 __Usage__: ```/delhome <home>```\
-__Description__: Deletes the player's home. If an argument is given, it'll be deleted instead\
+__Description__: Deletes the player's home. If an argument is given, it'll be deleted instead
 
 #### _SlimeNotifier_
 __Usage__: ```/slimecheck```\
