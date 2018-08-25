@@ -1,5 +1,5 @@
 name: Additions
-version: 0.4.0
+version: 0.4.2
 author: sdfzgufjkfdsgtzr
 main: de.sdfzgufjkfdsgtzr.plugin.Main
 api-version: 1.13
@@ -23,5 +23,5 @@ commands:
     description: pay money to another player
     usage: /pay <player> <amount>
   slimecheck:
-    description: provides information wether the player enters a slime chunk or not
+    description: provides information if the player enters a slime chunk
     usage: /slimecheck

@@ -65,7 +65,7 @@ public class Home implements CommandExecutor {
                     int z = player.getLocation().getBlockZ();
                     if (args.length == 0) {
                         setDefaultHome(player, player.getWorld(), x, y, z);
-                        String message = String.format(lang.getString(plugin.lang + ".home.set.default"), x, y, z, player.getWorld().getName());
+                        String message = String.format(lang.getString(plugin.lang + ".home.set-default"), x, y, z, player.getWorld().getName());
                         player.sendMessage(ChatColor.GRAY + message);
                     } else if (args.length == 1) {
                         if (player.hasPermission("add.player.home.set.multiple")) {
@@ -85,7 +85,7 @@ public class Home implements CommandExecutor {
                 }
             }
         } else {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " The Console cannot set it's home!");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " The Console's home is the terminal!");
             return true;
         }
         return false;

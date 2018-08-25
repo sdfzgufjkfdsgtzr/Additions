@@ -52,6 +52,6 @@ public class EnterSlimeChunk implements Listener {
     }
 
     private boolean wantsNotification(Player p){
-        return plugin.cfg.getBoolean("user." + p.getUniqueId().toString() + ".notify");
+        return plugin.cfg.getBoolean("user." + p.getName() + ".notify");
     }
 }

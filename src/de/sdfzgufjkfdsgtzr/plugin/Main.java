@@ -99,7 +99,7 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.home.teleport-message", "Du bist nun Zuhause");
         this.getLanguageFile().addDefault("de.home.teleport-usage", "Bitte /home <home> nutzen");
         this.getLanguageFile().addDefault("de.home.teleport-usage-set", "Bitte /sethome <home> nutzen");
-        this.getLanguageFile().addDefault("de.home.set", "Dein Zuhause: %s wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
+        this.getLanguageFile().addDefault("de.home.set", "Dein Zuhause: \"%s\" wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
         this.getLanguageFile().addDefault("de.home.set-default", "Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt");
         this.getLanguageFile().addDefault("de.home.not-set", "Du hast noch kein Zuhause!");
         this.getLanguageFile().addDefault("de.home.not-set-multiple", "Du hast noch kein Zuhause mit diesem Namen!");
