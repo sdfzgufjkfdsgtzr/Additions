@@ -123,6 +123,9 @@ public class Home implements CommandExecutor {
     }
 
 
+    /**
+     * sets the player's home if an home is specified
+     */
     private void setHome(Player player, World world, int x, int y, int z, String home) {
         homes.set("users." + player.getName() + "." + home + ".x", x);
         homes.set("users." + player.getName() + "." + home + ".y", y);
@@ -131,6 +134,9 @@ public class Home implements CommandExecutor {
         plugin.saveConfigFile(homes, plugin.home_file);
     }
 
+    /**
+     * sets the player's default home if no home is specified
+     */
     private void setDefaultHome(Player player, World world, int x, int y, int z) {
         homes.set("users." + player.getName() + ".default.x", x);
         homes.set("users." + player.getName() + ".default.y", y);
@@ -140,6 +146,9 @@ public class Home implements CommandExecutor {
     }
 
 
+    /**
+     * @return returns the specified home if existing
+     */
     private int[] getHome(Player player, String home) {
         int[] coords = new int[3];
 
@@ -152,16 +161,10 @@ public class Home implements CommandExecutor {
         return null;
     }
 
-    private void deleteHome(Player player, String home) {
-        homes.set("users." + player.getName() + "." + home, null);
-        plugin.saveConfigFile(homes, plugin.home_file);
-    }
-
-    private void deleteDefaultHome(Player player) {
-        homes.set("users." + player.getName() + ".default", null);
-        plugin.saveConfigFile(homes, plugin.home_file);
-    }
-
+    /**
+     *
+     * @return returns the default home if existing
+     */
     private int[] getDefaultHome(Player player) {
         int[] coords = new int[3];
 
@@ -174,6 +177,25 @@ public class Home implements CommandExecutor {
         return null;
     }
 
+    /**
+     * deletes the provided home
+     */
+    private void deleteHome(Player player, String home) {
+        homes.set("users." + player.getName() + "." + home, null);
+        plugin.saveConfigFile(homes, plugin.home_file);
+    }
+
+    /**
+     * deletes the default home
+     */
+    private void deleteDefaultHome(Player player) {
+        homes.set("users." + player.getName() + ".default", null);
+        plugin.saveConfigFile(homes, plugin.home_file);
+    }
+
+    /**
+     * @return if the home was found
+     */
     private boolean hasHome(Player player, String home) {
         return (homes.isSet("users." + player.getName() + "." + home + ".x") && homes.isSet("users." + player.getName() + "." + home + ".y") && homes.isSet("users." + player.getName() + "." + home + ".z"));
     }

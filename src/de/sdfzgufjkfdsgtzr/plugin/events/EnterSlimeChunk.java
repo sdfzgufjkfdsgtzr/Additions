@@ -38,6 +38,10 @@ public class EnterSlimeChunk implements Listener {
         }
     }
 
+    /**
+     * @param loc Chunk that needs to be checked
+     * @return returns whether the chunk is spawning slimes naturally nor it is not
+     */
     private boolean isSlimeChunk(long seed, Chunk loc){
         double xPos = loc.getX();
         long x = (long) Math.floor(xPos);

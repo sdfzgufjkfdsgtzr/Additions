@@ -53,6 +53,9 @@ public class JoinLeave implements Listener {
         }
     }
 
+    /**
+     * @return the player specified by the UUID
+     */
     private Player getPlayerByUUID(UUID uuid){
         return Bukkit.getPlayer(uuid);
     }

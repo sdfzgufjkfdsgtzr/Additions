@@ -66,6 +66,9 @@ public class Main extends JavaPlugin {
     }
 
 
+    /**
+     * loads config.yml, language.yml and homes.yml
+     */
     private void loadConfig(){
         cfg.options().copyDefaults(true);
         saveConfig();
@@ -74,14 +77,27 @@ public class Main extends JavaPlugin {
         saveConfigFile(homeFile, home_file);
     }
 
+    /**
+     * @return returns the LanguageFile
+     */
     public FileConfiguration getLanguageFile() {
         return languageFile;
     }
 
+    /**
+     *
+     * @return returns the HomeFile
+     */
     public FileConfiguration getHomeFile() {
         return homeFile;
     }
 
+
+    /**
+     * saves the custom Config
+     * @param configFile the File to be saves
+     * @param file the file's destination
+     */
     public void saveConfigFile(FileConfiguration configFile, File file) {
         try {
             configFile.save(file);
@@ -90,6 +106,9 @@ public class Main extends JavaPlugin {
         }
     }
 
+    /**
+     * sets german language defaults
+     */
     private void addGermanLanguageDefaults() {
         this.getLanguageFile().addDefault("de.permission-missing", "Du hast keine Berechtigung das zu tun");
         this.getLanguageFile().addDefault("de.permission-join-missing", "Du hast keine Berechtigung den Server zu betreten");
@@ -125,6 +144,9 @@ public class Main extends JavaPlugin {
         this.getLanguageFile().addDefault("de.event.no-sleep", "Es schlafen nur %d von %d nötigen Spielern!");
     }
 
+    /**
+     * sets English language defaults
+     */
     private void addEnglishLanguageDefaults() {
         this.getLanguageFile().addDefault("en.permission-missing", "You are not allowed to do this");
         this.getLanguageFile().addDefault("en.permission-join-missing", "You are not allowed to enter the server");

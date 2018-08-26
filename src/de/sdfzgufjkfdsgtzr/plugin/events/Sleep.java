@@ -47,6 +47,10 @@ public class Sleep implements Listener {
         playersSleeping.remove(e.getPlayer());
     }
 
+    /**
+     * @param w world to be checked for night time
+     * @return if it is night nor if it is not in the world
+     */
     private boolean validTime(World w){
         long time = w.getTime();
         return (time < 24000 && time > 12000);
