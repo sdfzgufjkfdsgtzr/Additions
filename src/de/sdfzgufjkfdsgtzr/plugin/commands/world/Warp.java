@@ -141,7 +141,7 @@ public class Warp implements CommandExecutor {
     }
 
     /**
-     * @return if the home was found
+     * @return if the warp was found
      */
     private boolean warpExists(String warp) {
         return (warps.isSet("warp." + warp + ".x") && warps.isSet("warp." + warp + ".y") && warps.isSet("warp." + warp + ".z"));
