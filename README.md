@@ -96,7 +96,7 @@ If you want to do it by yourself: copy the structure provided for English transl
   - [ ] add Logger for changes
 - [ ] make Sleep event configurable
 - [ ] Add permissions system
-- [ ] Add ticket systen
+- [ ] Add ticket system
 - [ ] Add Economy system
   - [ ] provide API for access by other developers
 - [ ] optimize code
