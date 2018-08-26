@@ -1,4 +1,4 @@
-# Additions 0.4.5
+# Additions 0.4.6
 
 ## Commands
 #### _Maintenance_
@@ -51,7 +51,7 @@ __Notes__: The format is fully customizable in the ```languages.yml```
 
 #### _ServerLeave_
 __Shoots when__: A player is leaving the server\
-__Description__: It is a custom join message\
+__Description__: It is a custom leave message\
 __Format__: ```{Playername} is now {LIGHT_RED}offline```\
 __Notes__: The format is fully customizable in the ```languages.yml``` 
 
@@ -77,7 +77,7 @@ __Notes__: The format is fully customizable in the ```languages.yml```
 
 ## Translations
 Feel free to add your own translations to the ```languages.yml``` or just ask me to add them to next version of it\
-If you want to do it by yourself: copy the structure provided for German translations and replace ```de``` to your country code. Then exchange the country code in the ```config.yml``` and you'll be ready to go.
+If you want to do it by yourself: copy the structure provided for English translations and replace ```en``` to your country code. Then exchange the country code in the ```config.yml``` and you'll be ready to go.
 
 ### Current available translations
 * German
@@ -96,12 +96,12 @@ If you want to do it by yourself: copy the structure provided for German transla
   - [ ] add Logger for changes
 - [ ] make Sleep event configurable
 - [ ] Add permissions system
-- [ ] Add ticket systen
+- [ ] Add ticket system
 - [ ] Add Economy system
   - [ ] provide API for access by other developers
 - [ ] optimize code
   - [X] remove unnecessary fragments
-  - [ ] add javadocs and comments
+  - [X] add javadocs and comments
 - [ ] add version checker
 - [X] keep this page up-to-date
   
