@@ -25,12 +25,12 @@ __Description__: Deletes the player's home. If an argument is given, it'll be de
 __Usage__: ```/warp <warp>```\
 __Description__: Teleports the player to the specified warp
 
-#### Setwarp
+#### _Setwarp_
 __Usage__: ```/setwarp <warp>```\
 __Description__: Sets the warp point\
 __Notes__: The warp location is editable in the plugin folder warps.yml once it is set
 
-#### Delwarp
+#### _Delwarp_
 __Usage__: ```/delwarp <warp>```\
 __Description__: Deletes the warp point
 
