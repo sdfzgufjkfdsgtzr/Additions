@@ -65,6 +65,7 @@ public class Main extends JavaPlugin {
         this.getCommand("warp").setExecutor(new Warp(this));
         this.getCommand("setwarp").setExecutor(new Warp(this));
         this.getCommand("delwarp").setExecutor(new Warp(this));
+        this.getCommand("warps").setExecutor(new Warp(this));
 
         maintenance = cfg.getBoolean("startup.maintenance");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + PLUGIN_NAME + " Successfully loaded!");
@@ -162,9 +163,12 @@ public class Main extends JavaPlugin {
         this.getLanguages().addDefault("de.warp.message", "Du wurdest zum Punkt \"%s\" gewarpt");
         this.getLanguages().addDefault("de.warp.usage", "Bitte nutze /warp <warp>");
         this.getLanguages().addDefault("de.warp.usage-set", "Bitte nutze /setwarp <warp>");
+        this.getLanguages().addDefault("de.warp.usage-del", "Bitte nutze /delwarp <warp>");
+        //this.getLanguages().addDefault("de.warp.usage-list", "Bitte nutze /warps um alle Warps zu sehen");
         this.getLanguages().addDefault("de.warp.set", "Der Warp: \"%s\" wurde bei X: %d Y: %d Z: %d in der Welt: \"%s\" gesetzt");
         this.getLanguages().addDefault("de.warp.del", "Der Warp: \"%s\" bei X: %d Y: %d Z: %d in der Welt: \"%s\" wurde gelöscht");
-        this.getLanguages().addDefault("de.warp.not-set", "Es gibt noch keinen Warp mit dem Namen \"%s\"!");
+        this.getLanguages().addDefault("de.warp.not-set", "Es gibt keinen Warp mit dem Namen \"%s\"!");
+        //this.getLanguages().addDefault("de.warp.list", "Liste aller existierenden Warps:");
 
         this.getLanguages().addDefault("de.service.deactivated", "%s hat den Wartungsmodus deaktiviert");
         this.getLanguages().addDefault("de.service.activated", "%s hat den Wartungsmodus aktiviert");
@@ -208,9 +212,12 @@ public class Main extends JavaPlugin {
         this.getLanguages().addDefault("en.warp.message", "You have been warped to \"%s\"");
         this.getLanguages().addDefault("en.warp.usage", "Please use /warp <warp>");
         this.getLanguages().addDefault("en.warp.usage-set", "Please use /setwarp <warp>");
+        this.getLanguages().addDefault("en.warp.usage-set", "Please use /delwarp <warp>");
+        //this.getLanguages().addDefault("en.warp.usage-list", "Please use /warps to list all available warp points");
         this.getLanguages().addDefault("en.warp.set", "The warp point: \"%s\" was set at X: %d Y: %d Z: %d in world: \"%s\"");
         this.getLanguages().addDefault("en.warp.del", "The warp point: \"%s\" at X: %d Y: %d Z: %d in world: \"%s\" was deleted");
         this.getLanguages().addDefault("en.warp.not-set", "There is no warp point called \"%s\" yet!");
+        //this.getLanguages().addDefault("en.warp.list", "List of all existing warp points:");
 
         this.getLanguages().addDefault("en.service.deactivated", "%s deactivated the service mode");
         this.getLanguages().addDefault("en.service.activated", "%s activated the service mode");

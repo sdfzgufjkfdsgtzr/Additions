@@ -31,9 +31,9 @@ commands:
   warp:
     description: teleports the player to the warp point
     usage: /warp <warp>
-    setwarp:
-      description: sets the warp point
-      usage: /setwarp <warp>
-    delwarp:
-      description: deletes the warp point
-      usage: /delwarp <warp>
+  setwarp:
+    description: sets the warp point
+    usage: /setwarp <warp>
+  delwarp:
+    description: deletes the warp point
+    usage: /delwarp <warp>

@@ -25,7 +25,6 @@ public class Warp implements CommandExecutor {
         this.lang = plugin.getLanguages();
         this.warps = plugin.getWarps();
         this.warpFile = plugin.getWarpFile();
-
     }
 
 
@@ -88,7 +87,7 @@ public class Warp implements CommandExecutor {
                             player.sendMessage(ChatColor.DARK_RED + message);
                         }
                     } else {
-                        player.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".warp.usage-set"));
+                        player.sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " " + lang.getString(plugin.lang + ".warp.usage-del"));
                     }
                     return true;
                 } else {
@@ -96,6 +95,7 @@ public class Warp implements CommandExecutor {
                     return true;
                 }
             }
+
         } else {
             Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + plugin.PLUGIN_NAME + " The Console's warp point is the shell!");
             return true;
@@ -108,10 +108,10 @@ public class Warp implements CommandExecutor {
      * sets the warp point
      */
     private void setWarp(World world, int x, int y, int z, String warp) {
-        warps.set("warps." + warp + ".x", x);
-        warps.set("warps." + warp + ".y", y);
-        warps.set("warps." + warp + ".z", z);
-        warps.set("warps." + warp + ".world", world.getName());
+        warps.set("warp." + warp + ".x", x);
+        warps.set("warp." + warp + ".y", y);
+        warps.set("warp." + warp + ".z", z);
+        warps.set("warp." + warp + ".world", world.getName());
         plugin.saveConfigFile(warps, warpFile);
     }
 
@@ -123,9 +123,9 @@ public class Warp implements CommandExecutor {
         int[] coords = new int[3];
 
         if (warpExists(warp)) {
-            coords[0] = warps.getInt("warps." + warp + ".x");
-            coords[1] = warps.getInt("warps." + warp + ".y");
-            coords[2] = warps.getInt("warps." + warp + ".z");
+            coords[0] = warps.getInt("warp." + warp + ".x");
+            coords[1] = warps.getInt("warp." + warp + ".y");
+            coords[2] = warps.getInt("warp." + warp + ".z");
             return coords;
         }
         return null;
@@ -136,7 +136,7 @@ public class Warp implements CommandExecutor {
      * deletes the provided warp
      */
     private void deleteWarp(String warp) {
-        warps.set("warps." + warp, null);
+        warps.set("warp." + warp, null);
         plugin.saveConfigFile(warps, warpFile);
     }
 
@@ -144,6 +144,8 @@ public class Warp implements CommandExecutor {
      * @return if the home was found
      */
     private boolean warpExists(String warp) {
-        return (warps.isSet("warps." + warp + ".x") && warps.isSet("warps." + warp + ".y") && warps.isSet("warps." + warp + ".z"));
+        return (warps.isSet("warp." + warp + ".x") && warps.isSet("warp." + warp + ".y") && warps.isSet("warp." + warp + ".z"));
     }
+
+
 }
