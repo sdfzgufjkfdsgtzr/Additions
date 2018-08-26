@@ -77,7 +77,7 @@ __Notes__: The format is fully customizable in the ```languages.yml```
 
 ## Translations
 Feel free to add your own translations to the ```languages.yml``` or just ask me to add them to next version of it\
-If you want to do it by yourself: copy the structure provided for German translations and replace ```de``` to your country code. Then exchange the country code in the ```config.yml``` and you'll be ready to go.
+If you want to do it by yourself: copy the structure provided for English translations and replace ```en``` to your country code. Then exchange the country code in the ```config.yml``` and you'll be ready to go.
 
 ### Current available translations
 * German
