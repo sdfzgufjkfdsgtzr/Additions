@@ -4,6 +4,7 @@ import de.sdfzgufjkfdsgtzr.plugin.commands.player.Home;
 import de.sdfzgufjkfdsgtzr.plugin.commands.player.SetChatColor;
 import de.sdfzgufjkfdsgtzr.plugin.commands.server.Maintenance;
 import de.sdfzgufjkfdsgtzr.plugin.commands.world.ChunkNotifier;
+import de.sdfzgufjkfdsgtzr.plugin.commands.world.Spawn;
 import de.sdfzgufjkfdsgtzr.plugin.commands.world.Warp;
 import de.sdfzgufjkfdsgtzr.plugin.events.player.Chat;
 import de.sdfzgufjkfdsgtzr.plugin.events.server.JoinLeave;
@@ -65,6 +66,7 @@ public class Main extends JavaPlugin {
         this.getCommand("setwarp").setExecutor(new Warp(this));
         this.getCommand("delwarp").setExecutor(new Warp(this));
         this.getCommand("warps").setExecutor(new Warp(this));
+        this.getCommand("setspawn").setExecutor(new Spawn());
 
         maintenance = cfg.getBoolean("startup.maintenance");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + PLUGIN_NAME + " Successfully loaded!");

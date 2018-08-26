@@ -1,5 +1,5 @@
 name: Additions
-version: 0.4.6
+version: 0.4.7
 author: sdfzgufjkfdsgtzr
 main: de.sdfzgufjkfdsgtzr.plugin.Main
 api-version: 1.13
@@ -37,3 +37,9 @@ commands:
   delwarp:
     description: deletes the warp point
     usage: /delwarp <warp>
+  spawn:
+    description: teleports the player to the world spawn
+    usage: /spawn
+  setspawn:
+    description: sets the new world spawn
+    usage: /setspawn
