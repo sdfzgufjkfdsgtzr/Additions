@@ -17,6 +17,10 @@ __Usage__: ```/sethome <home>```\
 __Description__: Set the player's home. If an argument is given, it'll become the home's name\
 __Notes__: The home location is editable in the plugin folder ```homes.yml``` once it is set
 
+#### _Delhome_
+__Usage__: ```/delhome <home>```\
+__Description__: Deletes the player's home. If an argument is given, it'll be deleted instead
+
 #### _SlimeNotifier_
 __Usage__: ```/slimecheck```\
 __Description__: Shows a message in chat whenever the player enters a chunk that allows Slimes to spawn naturally\
@@ -62,6 +66,7 @@ __Notes__: The format is fully customizable in the ```languages.yml```
 * add.player.home.teleport
 * add.player.home.set
 * add.player.home.set.multiple
+* add.player.home.del
 ##### _SlimeNotifier_
 * add.player.chunkNotifier
 ##### _ChatAppearance_
@@ -85,16 +90,17 @@ If you want to do it by yourself: copy the structure provided for German transla
 ## Todo
 - [ ] Expand Home's functionality
   - [X] Multiple homes
-  - [ ] Delete homes
+  - [X] Delete homes
   - [X] optimize config file
   - [ ] add Home limitations
+  - [ ] add Logger for changes
 - [ ] make Sleep event configurable
 - [ ] Add permissions system
 - [ ] Add ticket systen
 - [ ] Add Economy system
   - [ ] provide API for access by other developers
 - [ ] optimize code
-  - [ ] remove unnecessary fragments
+  - [X] remove unnecessary fragments
   - [ ] add javadocs and comments
 - [ ] add version checker
 - [X] keep this page up-to-date
