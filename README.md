@@ -51,7 +51,7 @@ __Notes__: The format is fully customizable in the ```languages.yml```
 
 #### _ServerLeave_
 __Shoots when__: A player is leaving the server\
-__Description__: It is a custom join message\
+__Description__: It is a custom leave message\
 __Format__: ```{Playername} is now {LIGHT_RED}offline```\
 __Notes__: The format is fully customizable in the ```languages.yml``` 
 
