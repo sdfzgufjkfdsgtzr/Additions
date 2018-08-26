@@ -101,7 +101,7 @@ If you want to do it by yourself: copy the structure provided for German transla
   - [ ] provide API for access by other developers
 - [ ] optimize code
   - [X] remove unnecessary fragments
-  - [ ] add javadocs and comments
+  - [X] add javadocs and comments
 - [ ] add version checker
 - [X] keep this page up-to-date
   
