@@ -1,4 +1,4 @@
-package de.sdfzgufjkfdsgtzr.plugin.commands;
+package de.sdfzgufjkfdsgtzr.plugin.commands.server;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
 import org.bukkit.Bukkit;
@@ -16,7 +16,7 @@ public class Maintenance implements CommandExecutor
 
     public Maintenance(Main plugin){
         this.plugin = plugin;
-        this.cfg = plugin.getLanguageFile();
+        this.cfg = plugin.getLanguages();
     }
 
 

@@ -1,4 +1,4 @@
-package de.sdfzgufjkfdsgtzr.plugin.events;
+package de.sdfzgufjkfdsgtzr.plugin.events.player;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
 import org.bukkit.ChatColor;

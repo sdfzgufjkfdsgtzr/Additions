@@ -1,4 +1,4 @@
-package de.sdfzgufjkfdsgtzr.plugin.events;
+package de.sdfzgufjkfdsgtzr.plugin.events.server;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
 import org.bukkit.Bukkit;
@@ -20,7 +20,7 @@ public class JoinLeave implements Listener {
 
     public JoinLeave(Main plugin){
         this.plugin = plugin;
-        this.cfg = plugin.getLanguageFile();
+        this.cfg = plugin.getLanguages();
     }
 
     @EventHandler

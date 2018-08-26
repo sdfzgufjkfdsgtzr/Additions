@@ -1,4 +1,4 @@
-package de.sdfzgufjkfdsgtzr.plugin.events;
+package de.sdfzgufjkfdsgtzr.plugin.events.server;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
 import org.bukkit.ChatColor;
@@ -15,7 +15,7 @@ public class ServerPing implements Listener {
 
     public ServerPing(Main plugin){
         this.plugin = plugin;
-        this.cfg = plugin.getLanguageFile();
+        this.cfg = plugin.getLanguages();
     }
 
     @EventHandler

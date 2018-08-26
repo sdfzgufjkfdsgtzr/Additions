@@ -1,4 +1,4 @@
-package de.sdfzgufjkfdsgtzr.plugin.events;
+package de.sdfzgufjkfdsgtzr.plugin.events.world;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
 import org.bukkit.ChatColor;
@@ -18,7 +18,7 @@ public class EnterSlimeChunk implements Listener {
 
     public EnterSlimeChunk(Main plugin){
         this.plugin = plugin;
-        this.cfg = plugin.getLanguageFile();
+        this.cfg = plugin.getLanguages();
     }
 
     @EventHandler
