@@ -5,7 +5,6 @@ import de.sdfzgufjkfdsgtzr.plugin.commands.player.SetChatColor;
 import de.sdfzgufjkfdsgtzr.plugin.commands.server.Maintenance;
 import de.sdfzgufjkfdsgtzr.plugin.commands.world.ChunkNotifier;
 import de.sdfzgufjkfdsgtzr.plugin.commands.world.Warp;
-import de.sdfzgufjkfdsgtzr.plugin.economy.Economy;
 import de.sdfzgufjkfdsgtzr.plugin.events.player.Chat;
 import de.sdfzgufjkfdsgtzr.plugin.events.server.JoinLeave;
 import de.sdfzgufjkfdsgtzr.plugin.events.server.ServerPing;
@@ -59,8 +58,8 @@ public class Main extends JavaPlugin {
         this.getCommand("sethome").setExecutor(new Home(this));
         this.getCommand("delhome").setExecutor(new Home(this));
         this.getCommand("service").setExecutor(new Maintenance(this));
-        this.getCommand("balance").setExecutor(new Economy(this));
-        this.getCommand("pay").setExecutor(new Economy(this));
+        /*this.getCommand("balance").setExecutor(new Economy(this));
+        this.getCommand("pay").setExecutor(new Economy(this));*/
         this.getCommand("slimecheck").setExecutor(new ChunkNotifier(this));
         this.getCommand("warp").setExecutor(new Warp(this));
         this.getCommand("setwarp").setExecutor(new Warp(this));

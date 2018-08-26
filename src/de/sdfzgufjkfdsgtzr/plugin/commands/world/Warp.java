@@ -36,7 +36,7 @@ public class Warp implements CommandExecutor {
                     if (args.length == 1) {
                         int coords[] = getWarp(args[0]);
                         if (coords != null) {
-                            Location home = new Location(Bukkit.getWorld(warps.getString("users." + player.getName() + "." + args[0] + ".world")), coords[0], coords[1], coords[2]);
+                            Location home = new Location(Bukkit.getWorld(warps.getString("warp." + args[0] + ".world")), coords[0], coords[1], coords[2]);
                             player.teleport(home);
                             String message = String.format(lang.getString(plugin.lang + ".warp.message"), args[0]);
                             player.sendMessage(ChatColor.GRAY + message);

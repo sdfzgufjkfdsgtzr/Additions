@@ -1,9 +1,6 @@
 startup:
   maintenance: false;
-  language: 'de'
+  language: 'en'
   motd: '&aGeneric MOTD Message'
   chat_color: '7'
   prefix_color: 'f'
-economy:
-  name: '[Economy]'
-  currency: '$'

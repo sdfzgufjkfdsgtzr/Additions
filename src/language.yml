@@ -7,14 +7,23 @@ de:
     enter-chunk: Du befindest dich nun in einem Slimechunk
     leave-chunk: Du befindest dich nun nicht mehr in einem Slimechunk
   home:
-    teleport-message: Du bist nun Zuhause
-    teleport-usage: Bitte /home <home> nutzen
-    teleport-usage-set: Bitte /sethome <home> nutzen
-    set: 'Dein Zuhause: "%s" wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt'
-    set-default: 'Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: %s gesetzt'
+    message: Du bist nun Zuhause
+    usage: Bitte /home <home> nutzen
+    set: 'Dein Zuhause: "%s" wurde bei X: %d Y: %d Z: %d in der Welt: "%s" gesetzt'
+    set-default: 'Dein Zuhause wurde bei X: %d Y: %d Z: %d in der Welt: "%s" gesetzt'
+    del: 'Dein Zuhause: "%s" bei X: %d Y: %d Z: %d in der Welt: "%s" wurde gelöscht'
+    del-default: 'Dein Zuhause bei X: %d Y: %d Z: %d in der Welt: "%s" wurde gelöscht'
     not-set: Du hast noch kein Zuhause!
     not-set-multiple: Du hast noch kein Zuhause mit diesem Namen!
     perm-multiple-missing: Du darfst nicht mehrere Homes haben!
+  warp:
+    message: Du wurdest zum Punkt "%s" gewarpt
+    usage: Bitte nutze /warp <warp>
+    usage-set: Bitte nutze /setwarp <warp>
+    usage-del: Bitte nutze /delwarp <warp>
+    set: 'Der Warp: "%s" wurde bei X: %d Y: %d Z: %d in der Welt: "%s" gesetzt'
+    del: 'Der Warp: "%s" bei X: %d Y: %d Z: %d in der Welt: "%s" wurde gelöscht'
+    not-set: Es gibt keinen Warp mit dem Namen "%s"!
   service:
     deactivated: '%s hat den Wartungsmodus deaktiviert'
     activated: '%s hat den Wartungsmodus aktiviert'
@@ -39,14 +48,23 @@ en:
     enter-chunk: You just entered a slime chunk
     leave-chunk: You aren't in a slime chunk anymore
   home:
-    teleport-message: You are now at home
-    teleport-usage: Please use /home <home>
-    teleport-usage-set: Please use /sethome <home>
-    set: 'Your home: "%s" was set at X: %d Y: %d Z: %d in world: %s'
-    set-default: 'Your home was set at X: %d Y: %d Z: %d in world: %s'
+    message: You are now at home
+    usage: Please use /home <home>
+    usage-set: Please use /sethome <home>
+    set: 'Your home: "%s" was set at X: %d Y: %d Z: %d in world: "%s"'
+    set-default: 'Your home was set at X: %d Y: %d Z: %d in world: "%s"'
+    del: 'Your home: "%s" at X: %d Y: %d Z: %d in world: "%s" was deleted'
+    del-default: 'Your home at X: %d Y: %d Z: %d in world: "%s" was deleted'
     not-set: You do not have a default home yet!
     not-set-multiple: You do not have a home with this name yet!
     perm-multiple-missing: You are not allowed to have multiple homes!
+  warp:
+    message: You have been warped to "%s"
+    usage: Please use /warp <warp>
+    usage-set: Please use /delwarp <warp>
+    set: 'The warp point: "%s" was set at X: %d Y: %d Z: %d in world: "%s"'
+    del: 'The warp point: "%s" at X: %d Y: %d Z: %d in world: "%s" was deleted'
+    not-set: There is no warp point called "%s" yet!
   service:
     deactivated: '%s deactivated the service mode'
     activated: '%s activated the service mode'
