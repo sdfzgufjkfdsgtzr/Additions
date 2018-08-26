@@ -1,4 +1,4 @@
-# Additions 0.4.6
+# Additions 0.4.7
 
 ## Commands
 #### _Maintenance_
@@ -20,6 +20,19 @@ __Notes__: The home location is editable in the plugin folder ```homes.yml``` on
 #### _Delhome_
 __Usage__: ```/delhome <home>```\
 __Description__: Deletes the player's home. If an argument is given, it'll be deleted instead
+
+#### _Warp_
+__Usage__: ```/warp <warp>```\
+__Description__: Teleports the player to the specified warp
+
+#### _Setwarp_
+__Usage__: ```/setwarp <warp>```\
+__Description__: Sets the warp point\
+__Notes__: The warp location is editable in the plugin folder warps.yml once it is set
+
+#### _Delwarp_
+__Usage__: ```/delwarp <warp>```\
+__Description__: Deletes the warp point
 
 #### _SlimeNotifier_
 __Usage__: ```/slimecheck```\
@@ -67,6 +80,10 @@ __Notes__: The format is fully customizable in the ```languages.yml```
 * add.player.home.set
 * add.player.home.set.multiple
 * add.player.home.del
+##### _Warp_
+* add.player.warp.teleport
+* add.player.warp.set
+* add.player.warp.del
 ##### _SlimeNotifier_
 * add.player.chunkNotifier
 ##### _ChatAppearance_
@@ -89,21 +106,13 @@ If you want to do it by yourself: copy the structure provided for English transl
 
 ## Todo
 - [ ] Expand Home's functionality
-  - [X] Multiple homes
-  - [X] Delete homes
-  - [X] optimize config file
   - [ ] add Home limitations
   - [ ] add Logger for changes
 - [ ] make Sleep event configurable
 - [ ] Add permissions system
 - [ ] Add ticket system
 - [ ] Add Economy system
-  - [ ] provide API for access by other developers
-- [ ] optimize code
-  - [X] remove unnecessary fragments
-  - [X] add javadocs and comments
 - [ ] add version checker
-- [X] keep this page up-to-date
   
 ## Disclaimer
 Please ensure you know that there are unforeseeable risks you may encounter resulting due to the plugin being a work-in-progress\
