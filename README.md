@@ -45,6 +45,14 @@ __Description__: Sets the display name and the chat color to the specified color
 __Notes__: The first argument specifies the color code for the player's name, the second argument specifies the format code for the text messages the player will send.\
 When no argument is given, the command will restore the default values specified in the ```config.yml```. The player's name is specified by the format code set at ```startup.prefix_color```, the messages format is specified by the format code set at ```startup.chat_color```.
 
+#### _Spawn_
+__Usage__: ```/spawn```\
+Description: Teleports the player to the world spawn
+
+#### _Setspawn_
+__Usage__: ```/setspawn```\
+Description: Sets the new world spawn
+
 ## Events
 #### _Sleep_
 __Shoots when__: 1/3 of the server's players is laying in the bed\
