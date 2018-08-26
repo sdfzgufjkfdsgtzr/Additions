@@ -1,4 +1,4 @@
-package de.sdfzgufjkfdsgtzr.plugin.commands;
+package de.sdfzgufjkfdsgtzr.plugin.commands.player;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
 import org.bukkit.Bukkit;
@@ -16,7 +16,7 @@ public class SetChatColor implements CommandExecutor {
 
     public SetChatColor(Main plugin){
         this.plugin = plugin;
-        this.cfg = plugin.getLanguageFile();
+        this.cfg = plugin.getLanguages();
     }
 
     @Override

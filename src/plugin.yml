@@ -28,3 +28,12 @@ commands:
   slimecheck:
     description: provides information if the player enters a slime chunk
     usage: /slimecheck
+  warp:
+    description: teleports the player to the warp point
+    usage: /warp <warp>
+  setwarp:
+    description: sets the warp point
+    usage: /setwarp <warp>
+  delwarp:
+    description: deletes the warp point
+    usage: /delwarp <warp>

@@ -1,4 +1,4 @@
-package de.sdfzgufjkfdsgtzr.plugin.commands;
+package de.sdfzgufjkfdsgtzr.plugin.commands.world;
 
 import de.sdfzgufjkfdsgtzr.plugin.Main;
 import org.bukkit.Bukkit;
@@ -16,7 +16,7 @@ public class ChunkNotifier implements CommandExecutor {
 
     public ChunkNotifier(Main plugin){
         this.plugin = plugin;
-        this.cfg = plugin.getLanguageFile();
+        this.cfg = plugin.getLanguages();
     }
 
 
