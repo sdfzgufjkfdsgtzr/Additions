@@ -90,6 +90,9 @@ __Notes__: The format is fully customizable in the ```languages.yml```
 * add.player.chat.appearance
 
 #### **Everything according to the world**
+##### _Spawn_
+* add.world.spawn
+* add.world.spawn.set
 
 
 ## Translations
