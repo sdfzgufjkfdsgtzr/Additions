@@ -65,8 +65,8 @@ public class Main extends JavaPlugin {
         this.getCommand("warp").setExecutor(new Warp(this));
         this.getCommand("setwarp").setExecutor(new Warp(this));
         this.getCommand("delwarp").setExecutor(new Warp(this));
-        this.getCommand("warps").setExecutor(new Warp(this));
         this.getCommand("setspawn").setExecutor(new Spawn());
+        this.getCommand("spawn").setExecutor(new Spawn());
 
         maintenance = cfg.getBoolean("startup.maintenance");
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + PLUGIN_NAME + " Successfully loaded!");

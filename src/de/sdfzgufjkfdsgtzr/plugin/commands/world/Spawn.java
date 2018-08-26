@@ -15,9 +15,14 @@ public class Spawn implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (label.equalsIgnoreCase("spawn")) {
-                player.teleport(Bukkit.getWorld("world").getSpawnLocation());
+                if (player.hasPermission("player.world.spawn"))
+                    player.teleport(Bukkit.getWorld("world").getSpawnLocation());
             } else if (label.equalsIgnoreCase("setspawn")) {
-                Bukkit.getWorld("world").setSpawnLocation(player.getLocation());
+                if (player.hasPermission("add.world.spawn.")) {
+                    Bukkit.getWorld("world").setSpawnLocation(player.getLocation());
+                    player.setBedSpawnLocation(player.getLocation(), true);
+                    player.sendMessage(ChatColor.GRAY + "Spawn location set");
+                }
             }
             return true;
         } else {
